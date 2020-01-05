@@ -6,8 +6,7 @@ public class Service {
 		try {
 			try {
 				lock.readLock().lock();
-				System.out.println("获得读锁" + Thread.currentThread().getName()
-						+ " " + System.currentTimeMillis());
+				System.out.println("获得读锁" + Thread.currentThread().getName() + " " + System.currentTimeMillis());
 				Thread.sleep(5000);
 			} finally {
 				lock.readLock().unlock();

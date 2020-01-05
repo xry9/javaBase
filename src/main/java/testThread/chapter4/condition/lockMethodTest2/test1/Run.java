@@ -12,13 +12,12 @@ public class Run {
 
 		Thread threadA = new Thread(runnable);
 		threadA.start();
-
 		Thread.sleep(500);
 
 		Thread threadB = new Thread(runnable);
 		threadB.start();
-
 		Thread.sleep(500);
+
 		System.out.println(service.lock.hasQueuedThread(threadA));
 		System.out.println(service.lock.hasQueuedThread(threadB));
 		System.out.println(service.lock.hasQueuedThreads());

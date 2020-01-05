@@ -12,7 +12,7 @@ public class Service {
 		try {
 			lock.lock();
 			System.out.println("wait begin");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			condition.awaitUninterruptibly();
 			System.out.println("wait   end");
 		} catch (InterruptedException e) {

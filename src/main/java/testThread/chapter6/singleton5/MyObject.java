@@ -1,12 +1,9 @@
 package testThread.chapter6.singleton5;
 
 public class MyObject {
-
 	private static MyObject myObject;
-
 	private MyObject() {
 	}
-
 	public static MyObject getInstance() {
 		try {
 			synchronized (MyObject.class) {

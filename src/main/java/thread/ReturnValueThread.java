@@ -18,6 +18,7 @@ public class ReturnValueThread {
             Future f1 = pool.submit(c1);
             Future f2 = pool.submit(c2);
             Future f3 = pool.submit(c3);
+            System.out.println("Main submit ...");
             //从Future对象上获取任务的返回值，并输出到控制台
             System.out.println(">>>"+f1.get().toString());
             System.out.println(">>>"+f2.get().toString());

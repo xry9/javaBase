@@ -12,7 +12,7 @@ public class MyService {
 		try {
 			lock.lock();
 			System.out.println("lock begin " + Thread.currentThread().getName());
-			for (int i = 0; i < Integer.MAX_VALUE / 10; i++) {
+			for (int i = 0; i < Integer.MAX_VALUE / 100; i++) {
 				String newString = new String();
 				Math.random();
 			}

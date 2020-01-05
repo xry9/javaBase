@@ -8,8 +8,7 @@ public class Service {
 		try {
 			try {
 				lock.writeLock().lock();
-				System.out.println("获得写锁" + Thread.currentThread().getName()
-						+ " " + System.currentTimeMillis());
+				System.out.println("获得写锁" + Thread.currentThread().getName() + " " + System.currentTimeMillis());
 				Thread.sleep(5000);
 			} finally {
 				lock.writeLock().unlock();

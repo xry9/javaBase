@@ -5,7 +5,6 @@ public class Run {
 
 	public static void main(String[] args) throws InterruptedException {
 		final MyService service = new MyService();
-
 		Runnable runnableRef = new Runnable() {
 			@Override
 			public void run() {

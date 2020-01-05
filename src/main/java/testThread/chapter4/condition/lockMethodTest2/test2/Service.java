@@ -19,8 +19,7 @@ public class Service {
 	public void notityMethod() {
 		try {
 			lock.lock();
-			System.out.println("有没有线程正在等待newCondition？"
-					+ lock.hasWaiters(newCondition) + " 线程数是多少？"
+			System.out.println("有没有线程正在等待newCondition？" + lock.hasWaiters(newCondition) + " 线程数是多少？"
 					+ lock.getWaitQueueLength(newCondition));
 			newCondition.signal();
 		} finally {

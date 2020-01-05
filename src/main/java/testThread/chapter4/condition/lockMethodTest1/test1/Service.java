@@ -8,8 +8,7 @@ public class Service {
 		try {
 			lock.lock();
 //			当时线程保持锁的个数
-			System.out.println("serviceMethod1 getHoldCount="
-					+ lock.getHoldCount());
+			System.out.println("serviceMethod1 getHoldCount=" + lock.getHoldCount());
 			serviceMethod2();
 		} finally {
 			lock.unlock();
@@ -18,8 +17,7 @@ public class Service {
 	public void serviceMethod2() {
 		try {
 			lock.lock();
-			System.out.println("serviceMethod2 getHoldCount="
-					+ lock.getHoldCount());
+			System.out.println("serviceMethod2 getHoldCount=" + lock.getHoldCount());
 		} finally {
 			lock.unlock();
 		}

@@ -6,13 +6,12 @@ public class RunNotFair {
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
-				System.out.println("★线程" + Thread.currentThread().getName()
-						+ "运行了");
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				System.out.println("★线程" + Thread.currentThread().getName() + "运行了");
+//				try {
+//					Thread.sleep(10);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 				service.serviceMethod();
 			}
 		};

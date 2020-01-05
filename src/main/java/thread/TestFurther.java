@@ -1,12 +1,6 @@
 package thread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 
 public class TestFurther {
 	public static void main(String[] args) {
@@ -16,7 +10,7 @@ public class TestFurther {
 					@Override
 					public Integer call() throws Exception {
 						System.out.println("不告诉你");
-						Thread.sleep(1000 * 3);
+						Thread.sleep(1000 * 20);
 						System.out.println("futureTask");
 						return 2;
 					}
@@ -32,16 +26,24 @@ public class TestFurther {
 					}
 				});
 		try {
-			System.out.println(executorService.submit(futureTask).get(4, TimeUnit.SECONDS));
-			executorService.submit(futureTask1).get(5, TimeUnit.SECONDS);
+			Future<?> f1 = executorService.submit(futureTask);
+			Object r1 = futureTask.get();
+			System.out.println(r1);
+
+//			Future<?> f2 = executorService.submit(futureTask1);
+//			Object r2 = futureTask1.get(2, TimeUnit.SECONDS);
+//			System.out.println(r2);
+
+			executorService.shutdown();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
 			e.printStackTrace();
-		} catch (TimeoutException e) {
-			System.out.println("超时了吧~~~");
-			e.printStackTrace();
-			executorService.shutdown();
 		}
+//		catch (TimeoutException e) {
+//			System.out.println("超时了吧~~~");
+//			e.printStackTrace();
+//			executorService.shutdown();
+//		}
 	}
 }

@@ -19,6 +19,7 @@ public class RunFair {
 				service.serviceMethod();
 			}
 		};
+
 		Thread[] threadArray = new Thread[10];
 		for (int i = 0; i < 10; i++) {
 			threadArray[i] = new Thread(runnable);
@@ -26,6 +27,5 @@ public class RunFair {
 		for (int i = 0; i < 10; i++) {
 			threadArray[i].start();
 		}
-
 	}
 }

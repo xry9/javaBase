@@ -11,5 +11,4 @@ public class Run {
 		a.start();
 		b.start();
 	}
-
 }

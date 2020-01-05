@@ -15,7 +15,7 @@ public class Run {
 		Thread threadA = new Thread(runnableRef);
 		threadA.setName("A");
 		threadA.start();
-		Thread.sleep(500);
+		Thread.sleep(50);
 		Thread threadB = new Thread(runnableRef);
 		threadB.setName("B");
 		threadB.start();

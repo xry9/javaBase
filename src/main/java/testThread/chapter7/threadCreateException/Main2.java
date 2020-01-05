@@ -2,6 +2,7 @@ package testThread.chapter7.threadCreateException;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 
+
 public class Main2 {
 
 	public static void main(String[] args) {
@@ -10,12 +11,11 @@ public class Main2 {
 		t1.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 			@Override
 			public void uncaughtException(Thread t, Throwable e) {
-				System.out.println("线程:" + t.getName() + "出现了异常");
+				System.out.println("线程:" + t.getName() + " 出现了异常：");
 				e.printStackTrace();
 			}
 		});
 		t1.start();
-
 		MyThread t2 = new MyThread();
 		t2.setName("线程t2");
 		t2.start();

@@ -13,12 +13,11 @@ public class MyService {
 //			如果当前线程未中断则获得锁，如果已被中断则出现异常
 			lock.lockInterruptibly();
 			System.out.println("lock " + Thread.currentThread().getName() + " start...");
-			for (int i = 0; i < Integer.MAX_VALUE / 10; i++) {
+			for (int i = 0; i < Integer.MAX_VALUE / 100; i++) {
 				String newString = new String();
 				Math.random();
 			}
 			System.out.println("lock " + Thread.currentThread().getName() + " end...");
-			
 		} catch (InterruptedException e) {
 			System.out.println("线程"+Thread.currentThread().getName()+"进入catch~!");
 			e.printStackTrace();

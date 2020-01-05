@@ -22,9 +22,9 @@ public class Service {
 	public void notityMethod() {
 		try {
 			lock.lock();
-			System.out.println("有" + lock.getWaitQueueLength(newCondition)
-					+ "个 newCondition");
-			newCondition.signal();
+			System.out.println("有" + lock.getWaitQueueLength(newCondition) + "个 newCondition");
+//			newCondition.signal();
+			newCondition.signalAll();
 		} finally {
 			lock.unlock();
 		}
