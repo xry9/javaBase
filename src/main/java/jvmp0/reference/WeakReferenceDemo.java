@@ -1,12 +1,9 @@
-package jvmp0;
+package jvmp0.reference;
 
 import java.lang.ref.WeakReference;
 
 public class WeakReferenceDemo {
     public static void main(String[] args) {
-
-        System.out.println(Thread.currentThread().getState());
-
         Salad salad = new Salad(new Apple("红富士"));
         //通过WeakReference的get()方法获取Apple
         System.out.println("Apple:" + salad.get());
@@ -17,10 +14,9 @@ public class WeakReferenceDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         //如果为空，代表被回收了
         if (salad.get() == null) {
-            System.out.println("clear Apple。");
+            System.out.println("clear Apple");
             System.out.println(salad == null);
         }
     }
@@ -44,13 +40,11 @@ class Apple {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        System.out.println("Apple： " + name + " finalize。");
+        System.out.println("Apple: " + name + " finalize");
     }
     @Override
     public String toString() {
-        return "Apple{" +
-                "name='" + name + '\'' +
-                '}' + ", hashCode:" + this.hashCode();
+        return "Apple{name='" + name + '\'' + "}, hashCode:" + this.hashCode();
     }
 }
 

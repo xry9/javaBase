@@ -1,7 +1,8 @@
-package nio;
-import java.lang.reflect.Field;
+package unsafe;
 
 import sun.misc.Unsafe;
+
+import java.lang.reflect.Field;
 
 public class TestUnsafeMemo {
 	// -XX:MaxDirectMemorySize=40M

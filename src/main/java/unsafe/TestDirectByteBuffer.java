@@ -1,4 +1,4 @@
-package nio;
+package unsafe;
 import java.nio.ByteBuffer;
 
 public class TestDirectByteBuffer {

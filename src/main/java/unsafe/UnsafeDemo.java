@@ -1,7 +1,8 @@
-package thread;
+package unsafe;
+
+import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
-import sun.misc.Unsafe;
 
 //https://www.jb51.net/article/140726.htm
 public class UnsafeDemo {
