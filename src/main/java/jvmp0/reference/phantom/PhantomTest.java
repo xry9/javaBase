@@ -14,15 +14,15 @@ public class PhantomTest {
         deamon.setDaemon(true);
         deamon.start();
 
-        // touch a.txt b.txt
-        // echo “hello” > a.txt
+        // touch a.class b.txt
+        // echo “hello” > a.class
         //保留对象,防止gc把stream回收掉,其不到演示效果
         List<Closeable> all=new ArrayList<>();
         FileInputStream inputStream;
         FileOutputStream outputStream;
 
         for (int i = 0; i < 100000; i++) {
-            inputStream = new FileInputStream("/home/tyx/a.txt");
+            inputStream = new FileInputStream("/home/tyx/a.class");
             outputStream = new FileOutputStream("/home/tyx/b.txt");
             FileOperation operation = new FileOperation(inputStream, outputStream);
             operation.operate();

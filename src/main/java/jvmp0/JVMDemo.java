@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JVMDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 //		System.out.println("Hello World...");
 		// Permanent
 		// Generation即持久代。持久代中要保存用户定义类的meta信息。如果程序中定义了很多类，就有可能很快填满这一代的内存空间，从而导致java.lang.OutOfMemoryError:PermGen.
@@ -31,24 +31,29 @@ public class JVMDemo {
 		// -XX:+PrintGCDetails
 
 		// 16 30 46 60 76 90 106
-		// byte[] b = null;
-		// for (int i = 0; i < 640000; i++) {
-		// b = new byte[1 * 1024 * 1024];
-		// }
+		 byte[] b = null;
+		 for (int i = 0; i < 640000; i++) {
+		 	b = new byte[1 * 1024 * 1024];
+		 }
 
 		// -Xss128K
 //		try {
-//			TestStackDeep.recursion(0L, 0L, 0L);
+//			TestStackDeep.recursion(0L, 0L, 0L, 0L, 0L, 0L) ;
 //		} catch (Throwable e) {
 //			System.out.println("deep of calling = " + TestStackDeep.count);
 //			e.printStackTrace();
 //		}
-		
-		
-		MyThread myThread = new MyThread();
-		PrintThread pThread = new PrintThread();
-		myThread.start();
-		pThread.start();
+
+//		for(int i=0;i<10000000;i++){
+//			CglibBean bean = new CglibBean("geym.jvm.ch3.perm.bean"+i,new HashMap());
+//			System.out.println(bean.getObject().getClass());
+//		}
+
+//		MyThread myThread = new MyThread();
+//		PrintThread pThread = new PrintThread();
+//		myThread.start();
+//		pThread.start();
+
 	}
 
 	public static void test1() {
@@ -99,7 +104,7 @@ public class JVMDemo {
         }
 	}
 
-	
+
 	public static class PrintThread extends Thread{
 	    public static final long starttime=System.currentTimeMillis();
 	    @Override
@@ -122,7 +127,7 @@ public class JVMDemo {
 	    public void run(){
 	        try{
 	            while(true){
-	                if(map.size()*512/1024/1024>=440){   //如果map消耗的内存消耗大于450时，那就清理内存
+	                if(map.size()*512/1024/1024>=550){   //如果map消耗的内存消耗大于450时，那就清理内存
 	                    System.out.println("=====准备清理=====:"+map.size());
 	                    map.clear();
 	                }
@@ -138,14 +143,5 @@ public class JVMDemo {
 	}
 }
 
-class TestStackDeep {
-	public static int count = 0;
-
-	public static void recursion(long a, long b, long c) {
-		long e = 1, f = 2, g = 3, h = 4, i = 5, k = 6, q = 7, x = 8, y = 9, z = 10;
-		count++;
-		recursion(a, b, c);
-	}
-}
 
 

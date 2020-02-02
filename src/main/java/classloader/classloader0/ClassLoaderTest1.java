@@ -4,29 +4,31 @@ import java.net.URL;
 
 import sun.misc.*;
 
-public class ClassLoaderTest1 {
-	  public static void main(String[] args) throws Exception {
-	    
-	    ClassLoader appClassLoader = ClassLoader.getSystemClassLoader();
-	    ClassLoader extClassloader = appClassLoader.getParent();
-	    ClassLoader bootstrapLoader  = extClassloader.getParent();
-	    System.out.println("the bootstrapLoader : " + bootstrapLoader);
-	    System.out.println("the extClassloader : " + extClassloader);
-	    System.out.println("the appClassLoader : " + appClassLoader);
-	    System.out.println();
-	    System.out.println("bootstrapLoader加载以下文件：");
-	    URL[] urls = Launcher.getBootstrapClassPath().getURLs();//虽然报错仍可以执行
-	    for (int i = 0; i < urls.length; i++) {
-	        System.out.println(urls[i]);
-	    }
-	    System.out.println();
-	    System.out.println("extClassloader加载以下文件：");
-	    System.out.println(System.getProperty("java.ext.dirs"));
-	    System.out.println();
-	    System.out.println("appClassLoader加载以下文件：");
-	    System.out.println(System.getProperty("java.class.path"));
-	  }
-	}
+//public class ClassLoaderTest1 {
+//	  public static void main(String[] args) throws Exception {
+//
+//	    ClassLoader appClassLoader = ClassLoader.getSystemClassLoader();
+//	    ClassLoader extClassloader = appClassLoader.getParent();
+//	    ClassLoader bootstrapLoader  = extClassloader.getParent();
+//	    System.out.println("the bootstrapLoader : " + bootstrapLoader);
+//	    System.out.println("the extClassloader : " + extClassloader);
+//	    System.out.println("the appClassLoader : " + appClassLoader);
+//	    System.out.println();
+//	    System.out.println("bootstrapLoader加载以下文件：");
+//	    URL[] urls = Launcher.getBootstrapClassPath().getURLs();//虽然报错仍可以执行
+//	    for (int i = 0; i < urls.length; i++) {
+//	        System.out.println(urls[i]);
+//	    }
+//	    System.out.println();
+//	    System.out.println("extClassloader加载以下文件：");
+//	    System.out.println(System.getProperty("java.ext.dirs"));
+//	    System.out.println();
+//	    System.out.println("appClassLoader加载以下文件：");
+//	    System.out.println(System.getProperty("java.class.path"));
+//	  }
+//	}
+
+
 //the bootstrapLoader : null
 //the extClassloader : sun.misc.Launcher$ExtClassLoader@5fcf29
 //the appClassLoader : sun.misc.Launcher$AppClassLoader@1a28362

@@ -40,12 +40,10 @@ public class ObjectInfo {
 		this.arrayElementSize = arrayElementSize;
 		children = new ArrayList<ObjectInfo>(1);
 	}
-
 	public void addChild(final ObjectInfo info) {
 		if (info != null)
 			children.add(info);
 	}
-
 	/**
 	 * Get the full amount of memory occupied by a given object. This value may
 	 * be slightly less than an actual value because we don't worry about memory
@@ -72,7 +70,7 @@ public class ObjectInfo {
 		if (!isArray && !children.isEmpty()) {
 			ObjectInfo childC = children.get(children.size() - 1);
 			int tempSize = childC.offset + childC.length;
-			System.out.println(size +"=="+ this.name + "==" + childC.name + "==" + childC.offset + "==" + childC.length); 
+			System.out.println(size +"==="+ this.name + "===" + childC.name + "===" + childC.offset + "===" + childC.length);
 			size += addPaddingSize(tempSize);
 		}
 		return size;

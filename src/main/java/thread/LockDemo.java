@@ -4,30 +4,31 @@ package thread;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LockDemo {
-    public static void main(String[] args) {
-        Lock lock =new ReentrantLock();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                lock.lock();
-                System.out.println("===run into ...==="+Thread.currentThread());
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("===run finish ...==="+Thread.currentThread());
-                lock.unlock();
-            }
-        };
-
-        Thread t1 = new Thread(runnable);
-        Thread t2 = new Thread(runnable);
-        t1.start();
-        t2.start();
-    }
-
+//结论：线程阻塞和解除阻塞是通过 UNSAFE.park, UNSAFE.unpark 实现的
+//public class LockDemo {
+//    public static void main(String[] args) {
+//        Lock lock =new ReentrantLock();
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                lock.lock();
+//                System.out.println("===run into ...==="+Thread.currentThread());
+//                try {
+//                    Thread.sleep(30_000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                System.out.println("===run finish ...==="+Thread.currentThread());
+//                lock.unlock();
+//            }
+//        };
+//
+//        Thread t1 = new Thread(runnable);
+//        Thread t2 = new Thread(runnable);
+//        t1.start();
+//        t2.start();
+//    }
+//
 //    public static int ff(){
 //        try {
 //            return 1;
@@ -38,5 +39,5 @@ public class LockDemo {
 //        }
 //        return 0;
 //    }
-}
+//}
 

@@ -15,10 +15,8 @@ public class MyThread extends Thread {
 	@Override
 	public void run() {
 		try {
-			Date dateRef = DateTools.getSimpleDateFormat("yyyy-MM-dd").parse(
-					dateString);
-			String newDateString = DateTools.getSimpleDateFormat("yyyy-MM-dd")
-					.format(dateRef).toString();
+			Date dateRef = DateTools.getSimpleDateFormat("yyyy-MM-dd").parse(dateString);
+			String newDateString = DateTools.getSimpleDateFormat("yyyy-MM-dd").format(dateRef).toString();
 			if (!newDateString.equals(dateString)) {
 				System.out.println("ThreadName=" + this.getName()
 						+ "������ �����ַ�����" + dateString + " ת���ɵ�����Ϊ��"

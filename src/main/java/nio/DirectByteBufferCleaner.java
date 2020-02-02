@@ -32,7 +32,7 @@ public class DirectByteBufferCleaner {
 	public static void ff() throws ClassNotFoundException,
 			NoSuchFieldException, SecurityException, IllegalArgumentException,
 			IllegalAccessException {
-		System.out.println("maxMemoryValue:" + sun.misc.VM.maxDirectMemory());
+//		System.out.println("maxMemoryValue:" + sun.misc.VM.maxDirectMemory());
 		System.out.println("================================");
 		ByteBuffer buffer = ByteBuffer.allocateDirect(0);
 		Class<?> c = Class.forName("java.nio.Bits");
