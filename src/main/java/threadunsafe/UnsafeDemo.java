@@ -9,13 +9,13 @@ import sun.misc.Unsafe;
 public class UnsafeDemo {
     public static Unsafe unsafe = UnsafeUtil.getUnsafe();
     public static void main(String[] args) throws Exception {
-//        function1();
+        function1();
 //        function2();
 //        function3();
 //        function4();
 //        function5();
 //        function6();
-        function7();
+//        function7();
     }
 
     public static void function7() throws NoSuchFieldException {

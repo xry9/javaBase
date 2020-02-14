@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class ThreadState {
  
     public static void main(String[] args) {
+
     	new Thread(new Running(), "RunningThread").start();
         new Thread(new TimeWaiting(), "TimeWaitingThread").start();
         new Thread(new Waiting(), "WaitingThread-1").start();

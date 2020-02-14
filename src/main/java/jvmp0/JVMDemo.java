@@ -37,12 +37,12 @@ public class JVMDemo {
 		 }
 
 		// -Xss128K
-//		try {
-//			TestStackDeep.recursion(0L, 0L, 0L, 0L, 0L, 0L) ;
-//		} catch (Throwable e) {
-//			System.out.println("deep of calling = " + TestStackDeep.count);
-//			e.printStackTrace();
-//		}
+		try {
+			TestStackDeep.recursion(0L, 0L, 0L, 0L, 0L, 0L) ;
+		} catch (Throwable e) {
+			System.out.println("deep of calling = " + TestStackDeep.count);
+			e.printStackTrace();
+		}
 
 //		for(int i=0;i<10000000;i++){
 //			CglibBean bean = new CglibBean("geym.jvm.ch3.perm.bean"+i,new HashMap());

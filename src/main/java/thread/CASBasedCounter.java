@@ -77,35 +77,35 @@ public class CASBasedCounter {
 
 
 
-final class Tools {
-  private static final Random rnd = new Random();
-
-
-  public static void startAndWaitTerminated(Iterable<Thread> threads)
-          throws InterruptedException {
-    if (null == threads) {
-      throw new IllegalArgumentException("threads is null!");
-    }
-    for (Thread t : threads) {
-      t.start();
-    }
-    for (Thread t : threads) {
-      t.join();
-    }
-  }
-
-
-
-  public static Unsafe getUnsafe() {
-    try {
-      Field f = Unsafe.class.getDeclaredField("theUnsafe");
-      f.setAccessible(true);
-      return (Unsafe) f.get(null);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return null;
-  }
-
-
-}
+//final class Tools {
+//  private static final Random rnd = new Random();
+//
+//
+//  public static void startAndWaitTerminated(Iterable<Thread> threads)
+//          throws InterruptedException {
+//    if (null == threads) {
+//      throw new IllegalArgumentException("threads is null!");
+//    }
+//    for (Thread t : threads) {
+//      t.start();
+//    }
+//    for (Thread t : threads) {
+//      t.join();
+//    }
+//  }
+//
+//
+//
+//  public static Unsafe getUnsafe() {
+//    try {
+//      Field f = Unsafe.class.getDeclaredField("theUnsafe");
+//      f.setAccessible(true);
+//      return (Unsafe) f.get(null);
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//    return null;
+//  }
+//
+//
+//}

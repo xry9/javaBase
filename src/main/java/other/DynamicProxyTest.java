@@ -16,6 +16,7 @@ public class DynamicProxyTest {
     }
     static class DynamicProxy implements InvocationHandler {
         Object orginalObj;
+
         Object bind(Object orginalObj) {
             this.orginalObj = orginalObj;
             return Proxy.newProxyInstance(orginalObj.getClass().getClassLoader(),
@@ -30,7 +31,7 @@ public class DynamicProxyTest {
     }
 
     public static void main(String[] args) {
-//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
         IHello hello = (IHello) new DynamicProxy().bind(new Hello());
         hello.sayHello();
     }
