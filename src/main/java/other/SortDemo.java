@@ -3,297 +3,297 @@ package other;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SortDemo {
-
-	public static void main(String[] args) {
-//		https://www.cnblogs.com/onepixel/articles/7674659.html
-		int arr[] = init(10_0000);
-		long l = System.currentTimeMillis();
-//		 int sortArr[] = bubbleSort(arr);//15.5
-//		int sortArr[] = selectionSort(arr);//4.3
-//		int sortArr[] = shellSort(arr);//0.02
-//		 int sortArr[] = insertionSort(arr);//4.3
-//		int sortArr[] = mergeSort(arr,0,10_0000-1);//0.025
-		quickSort(arr,0,10_0000-1);//0.02
-//		int sortArr[] = heapSort(arr);//0.016
-//		int sortArr[] = countSort(arr,10_0000);//0.003
-//		bucketSort(arr);//0.08
-//		radixSort(arr,100_0000);//0.025
-		System.out.println(System.currentTimeMillis() - l);
+//public class SortDemo {
+//
+//	public static void main(String[] args) {
+////		https://www.cnblogs.com/onepixel/articles/7674659.html
+//		int arr[] = init(10_0000);
+//		long l = System.currentTimeMillis();
+////		 int sortArr[] = bubbleSort(arr);//15.5
+////		int sortArr[] = selectionSort(arr);//4.3
+////		int sortArr[] = shellSort(arr);//0.02
+////		 int sortArr[] = insertionSort(arr);//4.3
+////		int sortArr[] = mergeSort(arr,0,10_0000-1);//0.025
+//		quickSort(arr,0,10_0000-1);//0.02
+////		int sortArr[] = heapSort(arr);//0.016
+////		int sortArr[] = countSort(arr,10_0000);//0.003
+////		bucketSort(arr);//0.08
+////		radixSort(arr,100_0000);//0.025
+//		System.out.println(System.currentTimeMillis() - l);
+////		for (int i = 0; i < arr.length; i++) {
+////			 System.out.println(arr[i]);
+////		}
+//	}
+//
+//
+//	public static int[] init(int n) {
+//		int arr[] = new int[n];
+//		// System.out.println(Math.random()*n +1);
 //		for (int i = 0; i < arr.length; i++) {
-//			 System.out.println(arr[i]);
+//			arr[i] = (int) (Math.random() * n + 1);
 //		}
-	}
-		
-
-	public static int[] init(int n) {
-		int arr[] = new int[n];
-		// System.out.println(Math.random()*n +1);
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = (int) (Math.random() * n + 1);
-		}
-		return arr;
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
-	public static int[] bubbleSort(int[] arr) {
-		int len = arr.length;
-		for (int i = 0; i < len; i++) {
-			boolean flag = true;
-			for (int j = 0; j < len - 1 - i; j++) {
-				if (arr[j] > arr[j + 1]) { // ÏàÁÚÔªËØÁ½Á½¶Ô±È
-					int temp = arr[j + 1]; // ÔªËØ½»»»
-					arr[j + 1] = arr[j];
-					arr[j] = temp;
-					flag=false;
-				}
-			}
-			if(flag){
-				break;
-			}
-		}
-		return arr;
-	}
-
-	public static void bubbleSort1(int[] arr) {
-		for (int i = 0; i < arr.length - 1; i++) {
-			boolean flag = true;// Éè¶¨Ò»¸ö±ê¼Ç£¬ÈôÎªtrue£¬Ôò±íÊ¾´Ë´ÎÑ­»·Ã»ÓÐ½øÐÐ½»»»£¬Ò²¾ÍÊÇ´ýÅÅÐòÁÐÒÑ¾­ÓÐÐò£¬ÅÅÐòÒÑÈ»Íê³É¡£
-			for (int j = 0; j < arr.length - 1 - i; j++) {
-				if (arr[j] > arr[j + 1]) {
-					// swap(arr,j,j+1);
-					flag = false;
-				}
-			}
-			if (flag) {
-				break;
-			}
-		}
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n2) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
-	public static int[] selectionSort(int[] arr) {
-		int len = arr.length;
-		int minIndex, temp;
-		for (int i = 0; i < len - 1; i++) {
-			minIndex = i;
-			for (int j = i + 1; j < len; j++) {
-				if (arr[j] < arr[minIndex]) { // Ñ°ÕÒ×îÐ¡µÄÊý
-					minIndex = j; // ½«×îÐ¡ÊýµÄË÷Òý±£´æ
-				}
-			}
-			temp = arr[i];
-			arr[i] = arr[minIndex];
-			arr[minIndex] = temp;
-		}
-		return arr;
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î»µÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
-	public static int[] insertionSort(int[] arr) {
-		int preIndex, current;
-		for (int i = 1; i < arr.length; i++) {
-			preIndex = i - 1;
-			current = arr[i];
-			while (preIndex >= 0 && arr[preIndex] > current) {
-				arr[preIndex + 1] = arr[preIndex];
-				preIndex--;
-			}
-			arr[preIndex + 1] = current;
-		}
-		return arr;
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlog2 n) ×î»µÇé¿ö£ºT(n) = O(nlog2 n) Æ½¾ùÇé¿ö£ºT(n) =O(nlog n)
-	public static int[] shellSort(int[] arr) {
-		int len = arr.length, temp, gap = 1;
-		while (gap < len / 3) { // ¶¯Ì¬¶¨Òå¼ä¸ôÐòÁÐ
-			gap = gap * 3 + 1;
-		}
-		for (; gap > 0; gap = (int) Math.floor(gap / 3)) {
-			for (int i = gap; i < len; i++) {
-				temp = arr[i];
-				int j = 0;
-				for (j = i - gap; j > 0 && arr[j] > temp; j -= gap) {
-					arr[j + gap] = arr[j];
-				}
-				arr[j + gap] = temp;
-			}
-		}
-		return arr;
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î²îÇé¿ö£ºT(n) = O(nlogn) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)
-	public static int[] mergeSort(int[] a, int low, int high) {
-		int mid = (low + high) / 2;
-		if (low < high) {
-			mergeSort(a, low, mid);
-			mergeSort(a, mid + 1, high);
-			// ×óÓÒ¹é²¢
-			merge(a, low, mid, high);
-		}
-		return a;
-	}
-	
-	public static void merge(int[] a, int low, int mid, int high) {
-		int[] temp = new int[high - low + 1];
-		int i = low;
-		int j = mid + 1;
-		int k = 0;
-		// °Ñ½ÏÐ¡µÄÊýÏÈÒÆµ½ÐÂÊý×éÖÐ
-		while (i <= mid && j <= high) {
-			if (a[i] < a[j]) {
-				temp[k++] = a[i++];
-			} else {
-				temp[k++] = a[j++];
-			}
-		}
-		// °Ñ×ó±ßÊ£ÓàµÄÊýÒÆÈëÊý×é
-		while (i <= mid) {
-			temp[k++] = a[i++];
-		}
-		// °ÑÓÒ±ß±ßÊ£ÓàµÄÊýÒÆÈëÊý×é
-		while (j <= high) {
-			temp[k++] = a[j++];
-		}
-		// °ÑÐÂÊý×éÖÐµÄÊý¸²¸ÇnumsÊý×é
-		for (int x = 0; x < temp.length; x++) {
-			a[x + low] = temp[x];
-		}
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlogn) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)¡¡
-	public static void quickSort(int[] array, int lo, int hi) {
-		if (lo >= hi) {
-			return;
-		}
-		int index = partition(array, lo, hi);
-		quickSort(array, lo, index - 1);
-		quickSort(array, index + 1, hi);
-	}
-
-	public static int partition(int[] array, int low, int high) {
-		// ¹Ì¶¨µÄÇÐ·Ö·½Ê½
-		int key = array[low];
-		while (low < high) {
-			while (array[high] >= key && high > low) {// ´Óºó°ë²¿·ÖÏòÇ°É¨Ãè
-				high--;
-			}
-			array[low] = array[high];
-			while (array[low] <= key && high > low) {// ´ÓÇ°°ë²¿·ÖÏòºóÉ¨Ãè
-				low++;
-			}
-			array[high] = array[low];
-		}
-		array[high] = key;
-		return high;
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlogn) ×î²îÇé¿ö£ºT(n) = O(nlogn) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)
-	public static int[] heapSort(int[] a) {
-		int i;
-		for (i = a.length / 2 - 1; i >= 0; i--) {// ¹¹½¨Ò»¸ö´ó¶¥¶Ñ
-			adjustHeap(a, i, a.length - 1);
-		}
-		for (i = a.length - 1; i >= 0; i--) {// ½«¶Ñ¶¥¼ÇÂ¼ºÍµ±Ç°Î´¾­ÅÅÐò×ÓÐòÁÐµÄ×îºóÒ»¸ö¼ÇÂ¼½»»»
-			int temp = a[0];
-			a[0] = a[i];
-			a[i] = temp;
-			adjustHeap(a, 0, i - 1);// ½«aÖÐÇ°i-1¸ö¼ÇÂ¼ÖØÐÂµ÷ÕûÎª´ó¶¥¶Ñ
-		}
-		return a;
-	}
-
-	public static void adjustHeap(int[] a, int i, int len) {
-		int temp, j;
-		temp = a[i];
-		for (j = 2 * i; j < len; j *= 2) {// ÑØ¹Ø¼ü×Ö½Ï´óµÄº¢×Ó½áµãÏòÏÂÉ¸Ñ¡
-			if (j < len && a[j] < a[j + 1])
-				++j; // jÎª¹Ø¼ü×ÖÖÐ½Ï´ó¼ÇÂ¼µÄÏÂ±ê
-			if (temp >= a[j])
-				break;
-			a[i] = a[j];
-			i = j;
-		}
-		a[i] = temp;
-	}
-
-//	¼ÆÊýÅÅÐòÊÊÓÃÓÚÐ¡·¶Î§Êý
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n+k) ×î²îÇé¿ö£ºT(n) = O(n+k) Æ½¾ùÇé¿ö£ºT(n) = O(n+k)
-	private static int[] countSort(int[] array, int k) {
-		int[] C = new int[k + 1];// ¹¹ÔìCÊý×é
-		int length = array.length, sum = 0;// »ñÈ¡AÊý×é´óÐ¡ÓÃÓÚ¹¹ÔìBÊý×é
-		int[] B = new int[length];// ¹¹ÔìBÊý×é
-		for (int i = 0; i < length; i++) {
-			C[array[i]] += 1;// Í³¼ÆAÖÐ¸÷ÔªËØ¸öÊý£¬´æÈëCÊý×é
-		}
-		for (int i = 0; i < k + 1; i++)// ÐÞ¸ÄCÊý×é
-		{
-			sum += C[i];
-			C[i] = sum;
-		}
-		for (int i = length - 1; i >= 0; i--)// ±éÀúAÊý×é£¬¹¹ÔìBÊý×é
-		{
-			B[C[array[i]] - 1] = array[i];// ½«AÖÐ¸ÃÔªËØ·Åµ½ÅÅÐòºóÊý×éBÖÐÖ¸¶¨µÄÎ»ÖÃ
-			C[array[i]]--;// ½«CÖÐ¸ÃÔªËØ-1£¬·½±ã´æ·ÅÏÂÒ»¸öÍ¬Ñù´óÐ¡µÄÔªËØ
-
-		}
-		return B;// ½«ÅÅÐòºÃµÄÊý×é·µ»Ø£¬Íê³ÉÅÅÐò
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n+k) ×î²îÇé¿ö£ºT(n) = O(n+k) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
-	public static void bucketSort(int[] arr) {
-		int max = Integer.MIN_VALUE;
-		int min = Integer.MAX_VALUE;
-		for (int i = 0; i < arr.length; i++) {
-			max = Math.max(max, arr[i]);
-			min = Math.min(min, arr[i]);
-		}
-		// Í°Êý
-		int bucketNum = (max - min) / arr.length + 1;
-		ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketNum);
-		for (int i = 0; i < bucketNum; i++) {
-			bucketArr.add(new ArrayList<Integer>());
-		}
-
-		// ½«Ã¿¸öÔªËØ·ÅÈëÍ°
-		for (int i = 0; i < arr.length; i++) {
-			int num = (arr[i] - min) / (arr.length);
-			bucketArr.get(num).add(arr[i]);
-		}
-
-		// ¶ÔÃ¿¸öÍ°½øÐÐÅÅÐò
-		for (int i = 0; i < bucketArr.size(); i++) {
-			Collections.sort(bucketArr.get(i));
-		}
-	}
-
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n * k) ×î²îÇé¿ö£ºT(n) = O(n * k) Æ½¾ùÇé¿ö£ºT(n) = O(n * k)
-	private static void radixSort(int[] array, int d) {
-		int n = 1;// ´ú±íÎ»Êý¶ÔÓ¦µÄÊý£º1,10,100...
-		int k = 0;// ±£´æÃ¿Ò»Î»ÅÅÐòºóµÄ½á¹ûÓÃÓÚÏÂÒ»Î»µÄÅÅÐòÊäÈë
-		int length = array.length;
-		int[][] bucket = new int[10][length];// ÅÅÐòÍ°ÓÃÓÚ±£´æÃ¿´ÎÅÅÐòºóµÄ½á¹û£¬ÕâÒ»Î»ÉÏÅÅÐò½á¹ûÏàÍ¬µÄÊý×Ö·ÅÔÚÍ¬Ò»¸öÍ°Àï
-		int[] order = new int[length];// ÓÃÓÚ±£´æÃ¿¸öÍ°ÀïÓÐ¶àÉÙ¸öÊý×Ö
-		while (n < d) {
-			for (int num : array) // ½«Êý×éarrayÀïµÄÃ¿¸öÊý×Ö·ÅÔÚÏàÓ¦µÄÍ°Àï
-			{
-				int digit = (num / n) % 10;
-				bucket[digit][order[digit]] = num;
-				order[digit]++;
-			}
-			for (int i = 0; i < length; i++)// ½«Ç°Ò»¸öÑ­»·Éú³ÉµÄÍ°ÀïµÄÊý¾Ý¸²¸Çµ½Ô­Êý×éÖÐÓÃÓÚ±£´æÕâÒ»Î»µÄÅÅÐò½á¹û
-			{
-				if (order[i] != 0)// Õâ¸öÍ°ÀïÓÐÊý¾Ý£¬´ÓÉÏµ½ÏÂ±éÀúÕâ¸öÍ°²¢½«Êý¾Ý±£´æµ½Ô­Êý×éÖÐ
-				{
-					for (int j = 0; j < order[i]; j++) {
-						array[k] = bucket[i][j];
-						k++;
-					}
-				}
-				order[i] = 0;// ½«Í°Àï¼ÆÊýÆ÷ÖÃ0£¬ÓÃÓÚÏÂÒ»´ÎÎ»ÅÅÐò
-			}
-			n *= 10;
-			k = 0;// ½«kÖÃ0£¬ÓÃÓÚÏÂÒ»ÂÖ±£´æÎ»ÅÅÐò½á¹û
-		}
-	}
-}
+//		return arr;
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2)
+//	public static int[] bubbleSort(int[] arr) {
+//		int len = arr.length;
+//		for (int i = 0; i < len; i++) {
+//			boolean flag = true;
+//			for (int j = 0; j < len - 1 - i; j++) {
+//				if (arr[j] > arr[j + 1]) { // ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½
+//					int temp = arr[j + 1]; // Ôªï¿½Ø½ï¿½ï¿½ï¿½
+//					arr[j + 1] = arr[j];
+//					arr[j] = temp;
+//					flag=false;
+//				}
+//			}
+//			if(flag){
+//				break;
+//			}
+//		}
+//		return arr;
+//	}
+//
+//	public static void bubbleSort1(int[] arr) {
+//		for (int i = 0; i < arr.length - 1; i++) {
+//			boolean flag = true;// ï¿½è¶¨Ò»ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½ï¿½Îªtrueï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ë´ï¿½Ñ­ï¿½ï¿½Ã»ï¿½Ð½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½É¡ï¿½
+//			for (int j = 0; j < arr.length - 1 - i; j++) {
+//				if (arr[j] > arr[j + 1]) {
+//					// swap(arr,j,j+1);
+//					flag = false;
+//				}
+//			}
+//			if (flag) {
+//				break;
+//			}
+//		}
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2)
+//	public static int[] selectionSort(int[] arr) {
+//		int len = arr.length;
+//		int minIndex, temp;
+//		for (int i = 0; i < len - 1; i++) {
+//			minIndex = i;
+//			for (int j = i + 1; j < len; j++) {
+//				if (arr[j] < arr[minIndex]) { // Ñ°ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½
+//					minIndex = j; // ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//				}
+//			}
+//			temp = arr[i];
+//			arr[i] = arr[minIndex];
+//			arr[minIndex] = temp;
+//		}
+//		return arr;
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n) ï¿½î»µï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2)
+//	public static int[] insertionSort(int[] arr) {
+//		int preIndex, current;
+//		for (int i = 1; i < arr.length; i++) {
+//			preIndex = i - 1;
+//			current = arr[i];
+//			while (preIndex >= 0 && arr[preIndex] > current) {
+//				arr[preIndex + 1] = arr[preIndex];
+//				preIndex--;
+//			}
+//			arr[preIndex + 1] = current;
+//		}
+//		return arr;
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlog2 n) ï¿½î»µï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlog2 n) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) =O(nlog n)
+//	public static int[] shellSort(int[] arr) {
+//		int len = arr.length, temp, gap = 1;
+//		while (gap < len / 3) { // ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//			gap = gap * 3 + 1;
+//		}
+//		for (; gap > 0; gap = (int) Math.floor(gap / 3)) {
+//			for (int i = gap; i < len; i++) {
+//				temp = arr[i];
+//				int j = 0;
+//				for (j = i - gap; j > 0 && arr[j] > temp; j -= gap) {
+//					arr[j + gap] = arr[j];
+//				}
+//				arr[j + gap] = temp;
+//			}
+//		}
+//		return arr;
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn)
+//	public static int[] mergeSort(int[] a, int low, int high) {
+//		int mid = (low + high) / 2;
+//		if (low < high) {
+//			mergeSort(a, low, mid);
+//			mergeSort(a, mid + 1, high);
+//			// ï¿½ï¿½ï¿½Ò¹é²¢
+//			merge(a, low, mid, high);
+//		}
+//		return a;
+//	}
+//
+//	public static void merge(int[] a, int low, int mid, int high) {
+//		int[] temp = new int[high - low + 1];
+//		int i = low;
+//		int j = mid + 1;
+//		int k = 0;
+//		// ï¿½Ñ½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		while (i <= mid && j <= high) {
+//			if (a[i] < a[j]) {
+//				temp[k++] = a[i++];
+//			} else {
+//				temp[k++] = a[j++];
+//			}
+//		}
+//		// ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		while (i <= mid) {
+//			temp[k++] = a[i++];
+//		}
+//		// ï¿½ï¿½ï¿½Ò±ß±ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		while (j <= high) {
+//			temp[k++] = a[j++];
+//		}
+//		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½numsï¿½ï¿½ï¿½ï¿½
+//		for (int x = 0; x < temp.length; x++) {
+//			a[x + low] = temp[x];
+//		}
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn)ï¿½ï¿½
+//	public static void quickSort(int[] array, int lo, int hi) {
+//		if (lo >= hi) {
+//			return;
+//		}
+//		int index = partition(array, lo, hi);
+//		quickSort(array, lo, index - 1);
+//		quickSort(array, index + 1, hi);
+//	}
+//
+//	public static int partition(int[] array, int low, int high) {
+//		// ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ð·Ö·ï¿½Ê½
+//		int key = array[low];
+//		while (low < high) {
+//			while (array[high] >= key && high > low) {// ï¿½Óºï¿½ë²¿ï¿½ï¿½ï¿½ï¿½Ç°É¨ï¿½ï¿½
+//				high--;
+//			}
+//			array[low] = array[high];
+//			while (array[low] <= key && high > low) {// ï¿½ï¿½Ç°ï¿½ë²¿ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½
+//				low++;
+//			}
+//			array[high] = array[low];
+//		}
+//		array[high] = key;
+//		return high;
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(nlogn)
+//	public static int[] heapSort(int[] a) {
+//		int i;
+//		for (i = a.length / 2 - 1; i >= 0; i--) {// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ó¶¥¶ï¿½
+//			adjustHeap(a, i, a.length - 1);
+//		}
+//		for (i = a.length - 1; i >= 0; i--) {// ï¿½ï¿½ï¿½Ñ¶ï¿½ï¿½ï¿½Â¼ï¿½Íµï¿½Ç°Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+//			int temp = a[0];
+//			a[0] = a[i];
+//			a[i] = temp;
+//			adjustHeap(a, 0, i - 1);// ï¿½ï¿½aï¿½ï¿½Ç°i-1ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½Îªï¿½ó¶¥¶ï¿½
+//		}
+//		return a;
+//	}
+//
+//	public static void adjustHeap(int[] a, int i, int len) {
+//		int temp, j;
+//		temp = a[i];
+//		for (j = 2 * i; j < len; j *= 2) {// ï¿½Ø¹Ø¼ï¿½ï¿½Ö½Ï´ï¿½Äºï¿½ï¿½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¸Ñ¡
+//			if (j < len && a[j] < a[j + 1])
+//				++j; // jÎªï¿½Ø¼ï¿½ï¿½ï¿½ï¿½Ð½Ï´ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Â±ï¿½
+//			if (temp >= a[j])
+//				break;
+//			a[i] = a[j];
+//			i = j;
+//		}
+//		a[i] = temp;
+//	}
+//
+////	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Î§ï¿½ï¿½
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n+k) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n+k) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n+k)
+//	private static int[] countSort(int[] array, int k) {
+//		int[] C = new int[k + 1];// ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½
+//		int length = array.length, sum = 0;// ï¿½ï¿½È¡Aï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½
+//		int[] B = new int[length];// ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½
+//		for (int i = 0; i < length; i++) {
+//			C[array[i]] += 1;// Í³ï¿½ï¿½Aï¿½Ð¸ï¿½Ôªï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½
+//		}
+//		for (int i = 0; i < k + 1; i++)// ï¿½Þ¸ï¿½Cï¿½ï¿½ï¿½ï¿½
+//		{
+//			sum += C[i];
+//			C[i] = sum;
+//		}
+//		for (int i = length - 1; i >= 0; i--)// ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½é£¬ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½
+//		{
+//			B[C[array[i]] - 1] = array[i];// ï¿½ï¿½Aï¿½Ð¸ï¿½Ôªï¿½Ø·Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+//			C[array[i]]--;// ï¿½ï¿½Cï¿½Ð¸ï¿½Ôªï¿½ï¿½-1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ôªï¿½ï¿½
+//
+//		}
+//		return B;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½é·µï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n+k) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n+k) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n2)
+//	public static void bucketSort(int[] arr) {
+//		int max = Integer.MIN_VALUE;
+//		int min = Integer.MAX_VALUE;
+//		for (int i = 0; i < arr.length; i++) {
+//			max = Math.max(max, arr[i]);
+//			min = Math.min(min, arr[i]);
+//		}
+//		// Í°ï¿½ï¿½
+//		int bucketNum = (max - min) / arr.length + 1;
+//		ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketNum);
+//		for (int i = 0; i < bucketNum; i++) {
+//			bucketArr.add(new ArrayList<Integer>());
+//		}
+//
+//		// ï¿½ï¿½Ã¿ï¿½ï¿½Ôªï¿½Ø·ï¿½ï¿½ï¿½Í°
+//		for (int i = 0; i < arr.length; i++) {
+//			int num = (arr[i] - min) / (arr.length);
+//			bucketArr.get(num).add(arr[i]);
+//		}
+//
+//		// ï¿½ï¿½Ã¿ï¿½ï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		for (int i = 0; i < bucketArr.size(); i++) {
+//			Collections.sort(bucketArr.get(i));
+//		}
+//	}
+//
+//	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n * k) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n * k) Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½T(n) = O(n * k)
+//	private static void radixSort(int[] array, int d) {
+//		int n = 1;// ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1,10,100...
+//		int k = 0;// ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		int length = array.length;
+//		int[][] bucket = new int[10][length];// ï¿½ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½Í°ï¿½ï¿½
+//		int[] order = new int[length];// ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Í°ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½
+//		while (n < d) {
+//			for (int num : array) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½arrayï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í°ï¿½ï¿½
+//			{
+//				int digit = (num / n) % 10;
+//				bucket[digit][order[digit]] = num;
+//				order[digit]++;
+//			}
+//			for (int i = 0; i < length; i++)// ï¿½ï¿½Ç°Ò»ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½Çµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//			{
+//				if (order[i] != 0)// ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½æµ½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//				{
+//					for (int j = 0; j < order[i]; j++) {
+//						array[k] = bucket[i][j];
+//						k++;
+//					}
+//				}
+//				order[i] = 0;// ï¿½ï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+//			}
+//			n *= 10;
+//			k = 0;// ï¿½ï¿½kï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ö±ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		}
+//	}
+//}

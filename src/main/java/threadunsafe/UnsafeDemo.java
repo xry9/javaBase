@@ -7,7 +7,7 @@ import java.util.Arrays;
 import sun.misc.Unsafe;
 
 public class UnsafeDemo {
-    public static Unsafe unsafe = UnsafeUtil.getUnsafe();
+    public static Unsafe unsafe = getUnsafe();
     public static void main(String[] args) throws Exception {
         function1();
 //        function2();
@@ -18,8 +18,19 @@ public class UnsafeDemo {
 //        function7();
     }
 
+    public static void function8() throws NoSuchFieldException {
+        // -XX:MaxDirectMemorySize=40M
+        Unsafe unsafe = getUnsafe();
+        while (true) {
+            long pointer = unsafe.allocateMemory(1024 * 1024 * 20);
+            System.out.println(unsafe.getByte(pointer + 1));
+            // 如果不释放内存,运行一段时间会报错java.lang.OutOfMemoryError
+//			 unsafe.freeMemory(pointer);
+        }
+
+    }
     public static void function7() throws NoSuchFieldException {
-        Unsafe unsafe = UnsafeUtil.getUnsafe();
+        Unsafe unsafe = getUnsafe();
         Player player = new Player();
         //反射获取Test对象name属性的Field
         Field field = Player.class.getDeclaredField("name");
@@ -120,6 +131,44 @@ public class UnsafeDemo {
         unsafe.putInt(num, adress+index+index, 3);
         unsafe.putInt(num, adress+index+index+index, 4);
         System.out.println(Arrays.toString(num));
+    }
+
+    public static Unsafe getUnsafe(){
+        try {
+            Field field = Unsafe.class.getDeclaredField("theUnsafe");
+            //因为 Unsafe 的 theUnsafe 字段是private 的，所以这里需要设置成可访问的
+            field.setAccessible(true);
+            //Unsafe 的这个属性 theUnsafe 是静态的所以这里的get参数就是null
+            Unsafe unsafe = (Unsafe)field.get(null);
+//            Unsafe unsafe = (Unsafe)field.get(Unsafe.class);
+            return unsafe;
+        } catch (Exception e) {}
+        return null;
+    }
+
+}
+
+
+class Player {
+
+    private String name;
+
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
 }

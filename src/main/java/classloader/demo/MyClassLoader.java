@@ -31,11 +31,11 @@ public class MyClassLoader extends ClassLoader {
 	}
 	@Override
 	protected Class<?> findClass(String className) throws ClassNotFoundException {
-		System.out.println("***********");
+		//System.out.println("***********");
 		//return super.findClass(name);
 		//1.查找.class文件，并将文件字节加载到内存中
 		byte[] classData = getClassData(className);
-		System.out.println("字节码："+Arrays.toString(classData));
+		//System.out.println("字节码："+Arrays.toString(classData));
 		//2.判断是否找到.class文件
 		if(classData == null){
 			//找不到抛出对应的异常
@@ -49,7 +49,7 @@ public class MyClassLoader extends ClassLoader {
 		//获取.class文件的位置
 		String path = classNameToPath(className);
 		try{
-			System.out.println("将要找的文件路径:"+path);
+//			System.out.println("将要找的文件路径:"+path);
 			FileInputStream  fis = new FileInputStream(path);
 			ByteArrayOutputStream   baos = new ByteArrayOutputStream();
 			
