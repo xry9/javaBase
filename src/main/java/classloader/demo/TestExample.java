@@ -30,10 +30,12 @@ public class TestExample {
 			System.out.println(obj2 instanceof Example);
 			//执行方法
 			Method setExampleMethod = class1.getMethod("setExample", Object.class);
-			setExampleMethod.invoke(obj1, obj2);
+			setExampleMethod.invoke(obj1, obj1);//obj2
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+
 	}
 }
