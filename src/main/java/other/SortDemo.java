@@ -11,11 +11,11 @@ public class SortDemo {
 		long l = System.currentTimeMillis();
 //		 int sortArr[] = bubbleSort(arr);//15.5
 //		int sortArr[] = selectionSort(arr);//4.3
-//		int sortArr[] = shellSort(arr);//0.02
+		int sortArr[] = shellSort(arr);//0.02
 //		 int sortArr[] = insertionSort(arr);//4.3
 //		int sortArr[] = mergeSort(arr,0,10_0000-1);//0.025
 //		quickSort(arr,0,10_0000-1);//0.02
-		int sortArr[] = heapSort(arr);//0.016
+//		int sortArr[] = heapSort(arr);//0.016
 //		int sortArr[] = countSort(arr,10_0000);//0.003
 //		bucketSort(arr);//0.08
 //		radixSort(arr,100_0000);//0.025
@@ -101,18 +101,16 @@ public class SortDemo {
 	}
 
 	public static int[] shellSort(int[] arr) {
-		int len = arr.length, temp, gap = 1;
-		while (gap < len / 3) {
-			gap = gap * 3 + 1;
-		}
-		for (; gap > 0; gap = (int) Math.floor(gap / 3)) {
-			for (int i = gap; i < len; i++) {
-				temp = arr[i];
-				int j = 0;
-				for (j = i - gap; j > 0 && arr[j] > temp; j -= gap) {
-					arr[j + gap] = arr[j];
+		int len = arr.length;
+		for(int gap = len/2; gap > 0; gap = gap/2) {
+			for(int i = gap; i < len; i++) {
+				int j = i;
+				int current = arr[i];
+				while(j - gap >= 0 && current < arr[j - gap]) {
+					arr[j] = arr[j - gap];
+					j = j - gap;
 				}
-				arr[j + gap] = temp;
+				arr[j] = current;
 			}
 		}
 		return arr;
@@ -254,16 +252,13 @@ public class SortDemo {
 		int[][] bucket = new int[10][length];
 		int[] order = new int[length];
 		while (n < d) {
-			for (int num : array)
-			{
+			for (int num : array) {
 				int digit = (num / n) % 10;
 				bucket[digit][order[digit]] = num;
 				order[digit]++;
 			}
-			for (int i = 0; i < length; i++)
-			{
-				if (order[i] != 0)
-				{
+			for (int i = 0; i < length; i++) {
+				if (order[i] != 0) {
 					for (int j = 0; j < order[i]; j++) {
 						array[k] = bucket[i][j];
 						k++;

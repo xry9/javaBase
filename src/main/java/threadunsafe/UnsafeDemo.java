@@ -9,21 +9,24 @@ import sun.misc.Unsafe;
 public class UnsafeDemo {
     public static Unsafe unsafe = getUnsafe();
     public static void main(String[] args) throws Exception {
-        function1();
+//        function1();
 //        function2();
 //        function3();
 //        function4();
 //        function5();
 //        function6();
 //        function7();
+        function8();
     }
 
     public static void function8() throws NoSuchFieldException {
         // -XX:MaxDirectMemorySize=40M
         Unsafe unsafe = getUnsafe();
+        int count = 0;
         while (true) {
             long pointer = unsafe.allocateMemory(1024 * 1024 * 20);
-            System.out.println(unsafe.getByte(pointer + 1));
+            unsafe.getByte(pointer + 1);
+            System.out.println(pointer+"==="+count++);
             // 如果不释放内存,运行一段时间会报错java.lang.OutOfMemoryError
 //			 unsafe.freeMemory(pointer);
         }
@@ -56,7 +59,7 @@ public class UnsafeDemo {
     public static void function6() {
         System.out.println("Start");
         long time = System.currentTimeMillis()+3000l;
-        unsafe.park(true,time);
+        unsafe.park(true, time);
         System.out.println("end");
     }
     

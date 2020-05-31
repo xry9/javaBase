@@ -9,6 +9,7 @@ package other;
  public class RBTreeTest {
 //    https://www.cnblogs.com/skywang12345/p/3624343.html
 //    https://www.jianshu.com/p/e136ec79235c
+//    https://www.cnblogs.com/jing99/p/11300828.html
      private static final int a[] = {10, 40, 30, 60, 90, 70, 20, 50, 80};
      private static final boolean mDebugInsert = false;    // "插入"动作的检测开关(false，关闭；true，打开)
      private static final boolean mDebugDelete = false;    // "删除"动作的检测开关(false，关闭；true，打开)
@@ -72,12 +73,9 @@ package other;
 
 
 class RBTree<T extends Comparable<T>> {
-
     private RBTNode<T> mRoot;    // 根结点
-
     private static final boolean RED   = false;
     private static final boolean BLACK = true;
-
     public class RBTNode<T extends Comparable<T>> {
         boolean color;        // 颜色
         T key;                // 关键字(键值)
@@ -92,16 +90,13 @@ class RBTree<T extends Comparable<T>> {
             this.left = left;
             this.right = right;
         }
-
         public T getKey() {
             return key;
         }
-
         public String toString() {
             return ""+key+(this.color==RED?"(R)":"B");
         }
     }
-
     public RBTree() {
         mRoot=null;
     }

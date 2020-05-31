@@ -6,16 +6,18 @@ import java.util.*;
 public class Demo {
     List<Node> nodes = new ArrayList<>();
     int index = -1;
-
-//    public static void main(String[] args) throws IOException, InterruptedException {
-////        int arr[] = {3,2,4,5,1,8,6,9,7,0,12,11,15,13,10,14,21,18,19,17,25,23,0,8,9,1};
-////        quickSort(arr, 0, arr.length-1);
-////        selectSort(arr);
-////        merge(arr, 0, (arr.length-1)/2, arr.length-1);
-////        countSort(arr, 10);
-////        radixSort(arr, 3);
-////        heapSort(arr);
-////        System.out.println(Arrays.toString(arr));
+    Node head = null;
+    public static void main(String[] args) throws IOException, InterruptedException {
+        int arr[] = {3,2,4,5,1,8,6,9,7,0,12,11,15,13,10,14,21,18,19,17,25,23,2};
+        insertSort(arr);
+        shellSort(arr);
+//        quickSort(arr, 0, arr.length-1);
+//        selectSort(arr);
+//        merge(arr, 0, (arr.length-1)/2, arr.length-1);
+//        countSort(arr, 10);
+//        radixSort(arr, 3);
+//        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
 //
 //        //匿名内部类
 //        Comparator<Integer> cpt = new Comparator<Integer>() {
@@ -30,73 +32,81 @@ public class Demo {
 //        Comparator<Integer> cpt2 = (x,y) -> Integer.compare(x,y);
 //        TreeSet<Integer> set2 = new TreeSet<>(cpt2);
 //
-//    }
-
-    public static void main(String[] args) {
-        Node root = new Node(8);
-        push(root, new Node(6));
-        push(root, new Node(12));
-        push(root, new Node(7));
-        push(root, new Node(10));
-        push(root, new Node(11));
-        push(root, new Node(9));
-        push(root, new Node(15));
-        push(root, new Node(14));
-        push(root, new Node(16));
-//        push(root, new Node(17));
-//        push(root, new Node(18));
-//        push(root, new Node(4));
-//        push(root, new Node(3));
-//        push(root, new Node(5));
-//        push(root, new Node(13));
-        System.out.println(findDeep(root, 1));
-//        aftPrintStack(root);
-//        System.out.println();
-//        System.out.println();
-//        aftPrintStack0(root);
-//        System.out.println();
-//        afterPrint(root);
-        midPrint(root);
-        System.out.println();
-        midPrintStack(root);
-//        prePrint(root);
-//        System.out.println();
-//        prePrintStack(root);
-
-//        Node head = findLeftBottom(root);
-//        midPrintLink(root);
-//        nextPrint(head);
-//        System.out.println();
-
-//        midPrint(root);
-
-
-//        int[] arr = {8, 6, 7, 12, 10, 9, 11, 13};
-//        prePrint(createPreNode(arr, 0, arr.length-1));
-
-//        int[] arr = {7, 6, 9, 11, 10, 13, 12, 8};
-//        afterPrint(createAfterNode(arr, 0, arr.length-1));
-
-//        int[] arrpre = {1,2,4,7,3,5,6,8};
-//        int[] arrmid = {4,7,2,1,5,3,8,6};
-//        preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1);
-//        prePrint(preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1));
-//        System.out.println();
-//        midPrint(preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1));
-
-//        int[] arr = {1,2,4,6,8,11,12};
-//        System.out.println(twoSplitSelect(arr, 0, arr.length-1, 9));
-//        System.out.println(twoSplitSelectStack(arr, 0, arr.length-1, 5));
-//        Demo demo = new Demo();
-//        int[] nums = {2,1,4,-1,-1,3};
-//        demo.index=1;
-//        Node root = demo.putTreeStack(nums);
-//        Node root = demo.putTree(nums, new Node(nums[0]), demo.index=1);
-//        prePrint(root);
-
-//        midPrint(root);
-
     }
+
+//    public static void main(String[] args) {
+//        Demo demo = new Demo();
+//        Node root = new Node(8);
+//        push(root, new Node(6));
+//        push(root, new Node(12));
+//        push(root, new Node(7));
+//        push(root, new Node(10));
+//        push(root, new Node(11));
+//        push(root, new Node(9));
+//        push(root, new Node(15));
+//        push(root, new Node(14));
+//        push(root, new Node(16));
+////        push(root, new Node(17));
+////        push(root, new Node(18));
+////        push(root, new Node(4));
+////        push(root, new Node(3));
+////        push(root, new Node(5));
+////        push(root, new Node(13));
+////        System.out.println(findDeep(root, 1));
+////        aftPrintStack(root);
+////        System.out.println();
+////        System.out.println();
+////        aftPrintStack0(root);
+////        System.out.println();
+////        afterPrint(root);
+////        midPrint(root);
+//
+//        demo.midPrint2Link(root);
+//        System.out.println();
+//        while (demo.head!=null){
+//            System.out.print(demo.head.val+", ");
+//            demo.head = demo.head.left;
+//        }
+////        midPrintStack(root);
+////        midPrintStack2Link(root);
+////        prePrint(root);
+////        System.out.println();
+////        prePrintStack(root);
+//
+////        Node head = findLeftBottom(root);
+////        midPrintLink(root);
+////        nextPrint(head);
+////        System.out.println();
+//
+////        midPrint(root);
+//
+//
+////        int[] arr = {8, 6, 7, 12, 10, 9, 11, 13};
+////        prePrint(createPreNode(arr, 0, arr.length-1));
+//
+////        int[] arr = {7, 6, 9, 11, 10, 13, 12, 8};
+////        afterPrint(createAfterNode(arr, 0, arr.length-1));
+//
+////        int[] arrpre = {1,2,4,7,3,5,6,8};
+////        int[] arrmid = {4,7,2,1,5,3,8,6};
+////        preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1);
+////        prePrint(preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1));
+////        System.out.println();
+////        midPrint(preMidCreate(arrpre, arrmid, 0, arrpre.length-1, 0, arrmid.length-1));
+//
+////        int[] arr = {1,2,4,6,8,11,12};
+////        System.out.println(twoSplitSelect(arr, 0, arr.length-1, 9));
+////        System.out.println(twoSplitSelectStack(arr, 0, arr.length-1, 5));
+////        Demo demo = new Demo();
+////        int[] nums = {2,1,4,-1,-1,3};
+////        demo.index=1;
+////        Node root = demo.putTreeStack(nums);
+////        Node root = demo.putTree(nums, new Node(nums[0]), demo.index=1);
+////        prePrint(root);
+//
+////        midPrint(root);
+//
+//    }
 
     public Node putTree(int[] nums, Node root, int start){
         if (start>=nums.length){
@@ -227,19 +237,72 @@ public class Demo {
                 root = root.left;
             }else {
                 System.out.print(root.val+", ");
-                    if (root.right!=null){
+                if (root.right!=null){
+                    root = root.right;
+                }else {
+                    if (!stack.isEmpty()){
+                        root =  stack.pop();
+                        System.out.print(root.val+", ");
                         root = root.right;
                     }else {
-                        if (!stack.isEmpty()){
-                            root =  stack.pop();
-                            System.out.print(root.val+", ");
-                            root = root.right;
-                        }else {
-                            break;
-                        }
+                        break;
                     }
+                }
             }
         }
+
+    }
+
+    public static void midPrintStack2Link(Node root){
+        Stack<Node> stack = new Stack();
+        Node head = null;
+        Node tmp = null;
+        while (!stack.isEmpty()||root!=null){
+            if (root.left!=null){
+                stack.push(root);
+                root = root.left;
+            }else {
+                System.out.print(root.val+". ");
+                if (head == null){
+                    head = root;
+                    tmp = root;
+                }else {
+                    tmp.right = root;
+                    root.left = tmp;
+                    tmp = root;
+                }
+                if (root.right!=null){
+                    root = root.right;
+                }else {
+                    if (!stack.isEmpty()){
+                        root =  stack.pop();
+                        if (head == null){
+                            head = root;
+                            tmp = root;
+                        }else {
+                            tmp.right = root;
+                            root.left = tmp;
+                            tmp = root;
+                        }
+                        System.out.print(root.val+", ");
+                        root = root.right;
+                    }else {
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println();
+        while (head != null){
+            System.out.print(head.val + "- ");
+            head = head.right;
+        }
+        System.out.println();
+        while (tmp != null){
+            System.out.print(tmp.val + "- ");
+            tmp = tmp.left;
+        }
+
     }
 
     public static void aftPrintStack(Node root){
@@ -391,6 +454,25 @@ public class Demo {
         if (root.right!=null){
             midPrint(root.right);
         }
+    }
+
+    public Node midPrint2Link(Node root){
+//        Node tmp = root;
+        if (root.left!=null){
+            midPrint2Link(root.left);
+        }
+        if (head==null){
+            head = root;
+        }else {
+            head.right = root;
+            root.left = head;
+            head = root;
+        }
+        System.out.print(root.val+", ");
+        if (root.right!=null){
+            midPrint2Link(root.right);
+        }
+        return root;
     }
 
     public static int findDeep(Node root, int curDeep){
@@ -626,6 +708,32 @@ public class Demo {
         for (int i=0;i<array.length;i++){
             for (int j=0;j<array[i];j++){
                 arr[index++] = i;
+            }
+        }
+    }
+
+    public static void insertSort(int[] arr){
+        for (int i=1;i<arr.length;i++){
+            int tmp = arr[i];
+            int index = i-1;
+            while (index>=0&&tmp<arr[index]){
+                arr[index+1] = arr[index];
+                index--;
+            }
+            arr[index+1] = tmp;
+        }
+    }
+
+    public static void shellSort(int[] arr){
+        for (int n=arr.length/2;n>0;n=n/2){
+            for (int i=n;i<arr.length;i++){
+                int tmp = arr[i];
+                int index = i-n;
+                while (index>=0&&tmp<arr[index]){
+                    arr[index+n] = arr[index];
+                    index = index -n;
+                }
+                arr[index+n] = tmp;
             }
         }
     }
