@@ -13,17 +13,15 @@ import javax.crypto.Cipher;
 import org.apache.commons.codec.binary.Base64;
 
 public class TestRSA {
-
+//    https://www.cnblogs.com/pcheng/p/9629621.html
     /**
      * RSA最大加密明文大小
      */
     private static final int MAX_ENCRYPT_BLOCK = 117;
-
     /**
      * RSA最大解密密文大小
      */
     private static final int MAX_DECRYPT_BLOCK = 128;
-
     /**
      * 获取密钥对
      *
@@ -47,7 +45,6 @@ public class TestRSA {
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decodedKey);
         return keyFactory.generatePrivate(keySpec);
     }
-
     /**
      * 获取公钥
      *
@@ -60,7 +57,6 @@ public class TestRSA {
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(decodedKey);
         return keyFactory.generatePublic(keySpec);
     }
-
     /**
      * RSA加密
      *
@@ -93,7 +89,6 @@ public class TestRSA {
         // 加密后的字符串
         return new String(Base64.encodeBase64String(encryptedData));
     }
-
     /**
      * RSA解密
      *
