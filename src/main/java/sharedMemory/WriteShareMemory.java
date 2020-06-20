@@ -1,4 +1,4 @@
-package tmp;
+package sharedMemory;
 
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;

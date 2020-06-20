@@ -1,4 +1,4 @@
-package tmp;
+package sharedMemory;
 
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
@@ -6,6 +6,7 @@ import java.nio.channels.FileChannel;
 
 public class ReadShareMemory {
 
+//    https://blog.csdn.net/qq_21125183/article/details/88295350
     /**
      * @param args
      * @throws Exception
