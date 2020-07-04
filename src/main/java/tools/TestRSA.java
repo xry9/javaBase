@@ -1,16 +1,12 @@
-package tmp;
+package tools;
 
+import org.apache.commons.codec.binary.Base64;
+
+import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
+import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import javax.crypto.Cipher;
-import org.apache.commons.codec.binary.Base64;
 
 public class TestRSA {
 //    https://www.cnblogs.com/pcheng/p/9629621.html
