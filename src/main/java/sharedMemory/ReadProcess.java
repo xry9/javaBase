@@ -11,7 +11,7 @@ public class ReadProcess {
         FileChannel channel = null;
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
 
             randomAccessFile = new RandomAccessFile("/home/tyx/files/c.txt", "rw");
             channel = randomAccessFile.getChannel();
@@ -19,7 +19,6 @@ public class ReadProcess {
 
             while (true) {
                 lock = channel.tryLock();
-
                 if (null == lock) {
                     System.out.println("Read Process : get lock failed");
                     Thread.sleep(1000);

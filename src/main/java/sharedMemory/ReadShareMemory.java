@@ -7,6 +7,7 @@ import java.nio.channels.FileChannel;
 public class ReadShareMemory {
 
 //    https://blog.csdn.net/qq_21125183/article/details/88295350
+    // 需不需要加锁呀
     /**
      * @param args
      * @throws Exception
