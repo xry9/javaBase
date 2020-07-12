@@ -1,8 +1,7 @@
-package tools;
+package tools.encryption;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
- 
+
 public class RC4Demo {
 
 //    RC4（来自Rivest Cipher 4的缩写）是一种流加密算法，密钥长度可变。它加解密使用相同的密钥，因此也属于对称加密算法

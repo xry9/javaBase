@@ -1,4 +1,4 @@
-package tools;
+package tools.encryption;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -8,7 +8,8 @@ import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
-public class TestRSA {
+public class RSADemo {
+//    RSA就是他们三人姓氏开头字母拼在一起组成的
 //    https://www.cnblogs.com/pcheng/p/9629621.html
     /**
      * RSA最大加密明文大小
@@ -170,7 +171,6 @@ public class TestRSA {
             // RSA解密
             String decryptData = decrypt(encryptData, getPrivateKey(privateKey));
             System.out.println("解密后内容:" + decryptData);
-
             // RSA签名
             String sign = sign(data, getPrivateKey(privateKey));
             // RSA验签

@@ -1,4 +1,4 @@
-package tools;
+package tools.encryption;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
