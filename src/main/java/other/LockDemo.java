@@ -17,13 +17,13 @@ public class LockDemo {
     Object oLock = new Object();
     public static void main(String[] args) throws InterruptedException {
         LockDemo demo = new LockDemo();
-//        Thread thread1 = new MyThread(demo, 1);
-//        Thread thread2 = new MyThread(demo, 2);
-        Thread thread3 = new MyThread(demo, true);
-        Thread thread4 = new MyThread(demo, false);
-        Thread thread5 = new MyThread(demo, false);
-        Thread thread6 = new MyThread(demo, false);
-        Thread thread7 = new MyThread(demo, false);
+//        Thread thread1 = new MyThread0(demo, 1);
+//        Thread thread2 = new MyThread0(demo, 2);
+        Thread thread3 = new MyThread0(demo, true);
+        Thread thread4 = new MyThread0(demo, false);
+        Thread thread5 = new MyThread0(demo, false);
+        Thread thread6 = new MyThread0(demo, false);
+        Thread thread7 = new MyThread0(demo, false);
 //        Thread thread4 = new MyThread(demo, true);
 //        Thread thread5 = new MyThread(demo, true);
 //        thread1.start();
@@ -136,15 +136,15 @@ public class LockDemo {
         writeLock.unlock();
     }
 }
-class MyThread extends Thread{
+class MyThread0 extends Thread{
     LockDemo lockDemo;
     boolean isWriteLock = false;
     int condition = 0;
-    public MyThread(LockDemo lockDemo, int condition){
+    public MyThread0(LockDemo lockDemo, int condition){
         this.lockDemo = lockDemo;
         this.condition = condition;
     }
-    public MyThread(LockDemo lockDemo, boolean isWriteLock){
+    public MyThread0(LockDemo lockDemo, boolean isWriteLock){
         this.lockDemo = lockDemo;
         this.isWriteLock = isWriteLock;
     }

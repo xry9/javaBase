@@ -1,6 +1,6 @@
 package threadunsafe;
 
-public class Player {
+public class Player0 {
 
     private String name;
     
