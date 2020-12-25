@@ -1,4 +1,4 @@
-package test;
+package other;
 
 public class InitDemo {
     static class DeadLoopClass {
