@@ -26,10 +26,8 @@ public class ReadProcess {
                     break;
                 }
             }
-
             System.out.println("Read Process : get lock");
             System.out.println("Read Process : get " + randomAccessFile.length() + " numbers");
-
             lock.release();
             System.out.println("Read Process : release lock");
         } catch (Exception e) {
