@@ -1,4 +1,4 @@
-package thread;
+package threadunsafe;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -19,15 +19,15 @@ class User{
                 '}';
     }
 }
+
 public class AtomicReferenceDemo {
     public static void main(String[] args) {
-        User z3 = new User("Z3",22);
-        User li4 = new User("li4",25);
-
+        User u1 = new User("Z3",22);
+        User u2 = new User("li4",25);
         AtomicReference<User> atomicReference = new AtomicReference<>();
-        atomicReference.set(z3);
-        System.out.println(atomicReference.compareAndSet(z3, li4)+"\t"+atomicReference.get().toString());
-        System.out.println(atomicReference.compareAndSet(z3, li4)+"\t"+atomicReference.get().toString());
+        atomicReference.set(u1);
+        System.out.println(atomicReference.compareAndSet(u1, u2)+"\t"+atomicReference.get().toString());
+        System.out.println(atomicReference.compareAndSet(u1, u2)+"\t"+atomicReference.get().toString());
 
     }
 }

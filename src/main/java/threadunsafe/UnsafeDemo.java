@@ -16,22 +16,25 @@ public class UnsafeDemo {
 //        function5();
 //        function6();
 //        function7();
-        function8();
+//        function8();
     }
 
-    public static void function8() throws NoSuchFieldException {
-        // -XX:MaxDirectMemorySize=40M
+    //    2>在当前线程中断的时候或者调用unpark的时候
+    public static void function8() throws Exception {
         Unsafe unsafe = getUnsafe();
-        int count = 0;
-        while (true) {
-            long pointer = unsafe.allocateMemory(1024 * 1024 * 20);
-            unsafe.getByte(pointer + 1);
-            System.out.println(pointer+"==="+count++);
-            // 如果不释放内存,运行一段时间会报错java.lang.OutOfMemoryError
-//			 unsafe.freeMemory(pointer);
-        }
-
+        Thread currThread = Thread.currentThread();
+        new Thread(()->{
+            try {
+                Thread.sleep(3000);
+//                currThread.interrupt();
+                unsafe.unpark(currThread);
+            } catch (Exception e) {}
+        }).start();
+        unsafe.park(false, 0);
+        System.out.println("SUCCESS222!!!");
     }
+
+
     public static void function7() throws NoSuchFieldException {
         Unsafe unsafe = getUnsafe();
         Player player = new Player();
@@ -48,33 +51,7 @@ public class UnsafeDemo {
         unsafe.compareAndSwapObject(player, offset, "myValue", "大王让我来巡山");
         System.out.println(player.getName());
     }
-    
-    /**
-     * park():方法返回条件
-     * 1 当前现程调用过 unpark 方法 (多次调用 按照一次计算)
-     * 2 当前线程被中断
-     * 3 当park 为 false:时间块到了 单位纳秒
-     * 4 当park 为 true:时间是绝对时间（1970）年 到期 单位毫秒
-     */
-    public static void function6() {
-        System.out.println("Start");
-        long time = System.currentTimeMillis()+3000l;
-        unsafe.park(true, time);
-        System.out.println("end");
-    }
-    
-    /**
-     * CAS操作
-     * @throws Exception
-     */
-    public static void function5() throws Exception {
-        Player player = (Player) unsafe.allocateInstance(Player.class);
-        Field age = player.getClass().getDeclaredField("age");
-        long addressAge = unsafe.objectFieldOffset(age);
-        unsafe.compareAndSwapInt(player, addressAge, 0, 100);
-        System.out.println(player.getAge());
-    }
-    
+
     /**
      * 直接分配内存地址：内存管理
      */

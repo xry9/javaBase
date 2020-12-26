@@ -91,17 +91,6 @@ class RR extends WeakReference<AA>{
 }
 
 class AA {
-    public AA(){
-
-    }
-//    long l1 = 10l;
-//    long l2 = 10l;
-//    long l3 = 10l;
-//    long l4 = 10l;
-//    long l5 = 10l;
-//    long l6 = 10l;
-//    long l7 = 10l;
-//    long l8 = 10l;
-//    long l9 = 10l;
+    public AA(){ }
     byte[] bytes = new byte[1024];
 }
