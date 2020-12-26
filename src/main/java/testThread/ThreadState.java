@@ -1,4 +1,4 @@
-package thread2;
+package testThread;
 
 import java.util.concurrent.TimeUnit;
 
