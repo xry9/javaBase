@@ -3,6 +3,7 @@ package java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class FunctionDemo {
     public static void main(String args[]){
@@ -29,9 +30,9 @@ public class FunctionDemo {
 }
 
 //@FunctionalInterface
-interface Supplier<T> {
-    T get();
-}
+//interface Supplier<T> {
+//    T get();
+//}
 
 class Car {
     //Supplier是jdk1.8的接口，这里和lamda一起使用了

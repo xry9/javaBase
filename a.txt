@@ -1,0 +1,193 @@
+===parseExtClasspath===844===
+[INFO] ===execute===102===
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.xryj:javaBase >--------------------------
+[INFO] Building javaBase 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ javaBase ---
+===getConfiguredMojo===520===org.apache.maven.plugins.resources.ResourcesMojo===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-resources-plugin:3.0.2:resources
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugins.resources.ResourcesMojo
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/fintopia/app/mygit/javaBase/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ javaBase ---
+===getConfiguredMojo===520===org.apache.maven.plugin.compiler.CompilerMojo===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugin.compiler.CompilerMojo
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 95 source files to /Users/fintopia/app/mygit/javaBase/target/classes
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,44] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,45] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,46] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,47] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,49] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,50] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,51] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,52] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,53] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,54] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,55] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,57] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,65] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,66] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,67] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,68] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,71] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,72] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,74] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,75] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,76] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,77] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,78] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,80] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,81] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,82] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,83] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,84] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,85] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,86] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,87] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,88] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,89] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,90] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,92] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,93] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,94] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,95] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,96] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,97] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,111] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,112] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,113] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,114] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,115] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,117] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,118] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,119] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,121] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,122] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,123] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,124] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,125] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,127] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,128] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,129] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,130] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/genericType/TypeErasure_test.java:[8,131] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,12] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,13] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,14] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,15] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,16] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,17] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,18] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,19] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,32] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,33] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,34] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,35] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,36] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,37] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,38] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,39] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,54] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,55] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,56] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,57] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,58] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,59] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[38,60] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,63] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,64] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,65] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,66] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,68] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,69] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,70] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,71] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,72] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,73] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,74] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[44,76] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[45,68] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[45,70] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[45,71] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[45,72] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[60,48] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[60,51] 编码UTF-8的不可映射字符
+[ERROR] /Users/fintopia/app/mygit/javaBase/src/main/java/other/SortDemo.java:[60,52] 编码UTF-8的不可映射字符
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[7,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/ObjectInHeap.java:[3,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/RevisedObjectInHeap.java:[3,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/DirectMemoryOOM.java:[3,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/UnsafeInstanceUtil.java:[3,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/TestUnsafeMemo.java:[3,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[10,19] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[24,9] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[39,9] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[116,19] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[118,27] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[122,13] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/threadunsafe/UnsafeDemo.java:[122,30] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/tools/encryption/DESDemo.java:[28,41] sun.misc.BASE64Encoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/tools/encryption/DESDemo.java:[46,67] sun.misc.BASE64Decoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/ObjectInHeap.java:[11,13] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/RevisedObjectInHeap.java:[10,13] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/DirectMemoryOOM.java:[12,29] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/DirectMemoryOOM.java:[14,9] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/DirectMemoryOOM.java:[14,26] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/UnsafeInstanceUtil.java:[9,19] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/UnsafeInstanceUtil.java:[14,33] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/UnsafeInstanceUtil.java:[17,21] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/UnsafeInstanceUtil.java:[17,51] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/fintopia/app/mygit/javaBase/src/main/java/notHeap/TestUnsafeMemo.java:[10,9] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[INFO] /Users/fintopia/app/mygit/javaBase/src/main/java/other/BPlusTree.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/fintopia/app/mygit/javaBase/src/main/java/other/BPlusTree.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ javaBase ---
+===getConfiguredMojo===520===org.apache.maven.plugins.resources.TestResourcesMojo===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-resources-plugin:3.0.2:testResources
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugins.resources.TestResourcesMojo
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/fintopia/app/mygit/javaBase/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ javaBase ---
+===getConfiguredMojo===520===org.apache.maven.plugin.compiler.TestCompilerMojo===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugin.compiler.TestCompilerMojo
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ javaBase ---
+===getConfiguredMojo===520===org.apache.maven.plugin.surefire.SurefirePlugin===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugin.surefire.SurefirePlugin
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ javaBase ---
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.0/plexus-archiver-3.0.pom
+Progress (1): 4.1/4.8 kBProgress (1): 4.8 kB                        Downloaded from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.0/plexus-archiver-3.0.pom (4.8 kB at 13 kB/s)
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+Progress (1): 4.1/5.3 kBProgress (1): 5.3 kB                        Downloaded from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 49 kB/s)
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar
+Progress (1): 0.9/187 kBProgress (1): 2.3/187 kBProgress (1): 3.7/187 kBProgress (1): 5.1/187 kBProgress (1): 6.5/187 kBProgress (1): 7.9/187 kBProgress (1): 9.3/187 kBProgress (1): 11/187 kB Progress (1): 12/187 kBProgress (1): 14/187 kBProgress (1): 15/187 kBProgress (1): 16/187 kBProgress (1): 18/187 kBProgress (1): 19/187 kBProgress (1): 21/187 kBProgress (1): 22/187 kBProgress (1): 23/187 kBProgress (1): 25/187 kBProgress (1): 26/187 kBProgress (1): 28/187 kBProgress (1): 29/187 kBProgress (1): 30/187 kBProgress (1): 32/187 kBProgress (1): 33/187 kBProgress (1): 35/187 kBProgress (1): 36/187 kBProgress (1): 37/187 kBProgress (1): 39/187 kBProgress (1): 40/187 kBProgress (1): 42/187 kBProgress (1): 43/187 kBProgress (1): 44/187 kBProgress (1): 46/187 kBProgress (1): 47/187 kBProgress (1): 49/187 kBProgress (1): 50/187 kBProgress (1): 51/187 kBProgress (1): 53/187 kBProgress (1): 54/187 kBProgress (1): 56/187 kBProgress (1): 57/187 kBProgress (1): 58/187 kBProgress (1): 60/187 kBProgress (1): 61/187 kBProgress (1): 63/187 kBProgress (1): 64/187 kBProgress (1): 65/187 kBProgress (1): 67/187 kBProgress (1): 68/187 kBProgress (1): 70/187 kBProgress (1): 71/187 kBProgress (1): 72/187 kBProgress (1): 74/187 kBProgress (1): 75/187 kBProgress (1): 77/187 kBProgress (1): 78/187 kBProgress (1): 79/187 kBProgress (1): 81/187 kBProgress (1): 82/187 kBProgress (1): 84/187 kBProgress (1): 85/187 kBProgress (1): 86/187 kBProgress (1): 88/187 kBProgress (1): 89/187 kBProgress (1): 91/187 kBProgress (1): 92/187 kBProgress (1): 93/187 kBProgress (1): 95/187 kBProgress (1): 96/187 kBProgress (1): 98/187 kBProgress (1): 99/187 kBProgress (1): 100/187 kBProgress (1): 102/187 kBProgress (1): 103/187 kBProgress (1): 105/187 kBProgress (1): 106/187 kBProgress (1): 107/187 kBProgress (1): 109/187 kBProgress (1): 110/187 kBProgress (1): 112/187 kBProgress (1): 113/187 kBProgress (1): 114/187 kBProgress (1): 116/187 kBProgress (1): 117/187 kBProgress (1): 119/187 kBProgress (1): 120/187 kBProgress (1): 121/187 kBProgress (1): 123/187 kBProgress (1): 124/187 kBProgress (1): 126/187 kBProgress (1): 127/187 kBProgress (1): 128/187 kBProgress (1): 130/187 kBProgress (1): 131/187 kBProgress (1): 133/187 kBProgress (1): 134/187 kBProgress (1): 135/187 kBProgress (1): 137/187 kBProgress (1): 138/187 kBProgress (1): 140/187 kBProgress (1): 141/187 kBProgress (1): 142/187 kBProgress (1): 144/187 kBProgress (1): 145/187 kBProgress (1): 147/187 kBProgress (1): 148/187 kBProgress (1): 149/187 kBProgress (1): 151/187 kBProgress (1): 152/187 kBProgress (1): 154/187 kBProgress (1): 155/187 kBProgress (1): 156/187 kBProgress (1): 158/187 kBProgress (1): 159/187 kBProgress (1): 161/187 kBProgress (1): 162/187 kBProgress (1): 163/187 kBProgress (1): 165/187 kBProgress (1): 166/187 kBProgress (1): 168/187 kBProgress (1): 169/187 kBProgress (1): 170/187 kBProgress (1): 172/187 kBProgress (1): 173/187 kBProgress (1): 175/187 kBProgress (1): 176/187 kBProgress (1): 177/187 kBProgress (1): 179/187 kBProgress (1): 180/187 kBProgress (1): 182/187 kBProgress (1): 183/187 kBProgress (1): 184/187 kBProgress (1): 186/187 kBProgress (1): 187 kB                        Downloaded from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar (187 kB at 760 kB/s)
+===getConfiguredMojo===520===org.apache.maven.plugins.jar.JarMojo===org.codehaus.plexus.DefaultPlexusContainer===org.apache.maven.plugin.Mojo===org.apache.maven.plugins:maven-jar-plugin:3.0.2:jar
+===populatePluginFields===636===org.codehaus.plexus.component.configurator.BasicComponentConfigurator
+===executeMojo===136===org.apache.maven.plugins.jar.JarMojo
+===execute===247===
+===execute===203===/Users/fintopia/app/mygit/javaBase/target/javaBase-1.0-SNAPSHOT.jar===false
+===execute===223===false===org.apache.maven.archiver.MavenArchiver
+===createArchive===639===org.codehaus.plexus.archiver.jar.JarArchiver
+[INFO] Building jar: /Users/fintopia/app/mygit/javaBase/target/javaBase-1.0-SNAPSHOT.jar
+===createArchive===649===
+===execute===225===true
+===execute===263===/Users/fintopia/app/mygit/javaBase/target/javaBase-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] ===logResult===256===
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.937 s
+[INFO] Finished at: 2021-03-18T14:55:46+08:00
+[INFO] ------------------------------------------------------------------------
