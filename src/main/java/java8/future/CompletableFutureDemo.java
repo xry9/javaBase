@@ -16,7 +16,7 @@ public class CompletableFutureDemo {
 //        handle();
 //        thenAccept();
 //        thenRun();
-        thenCombine();
+//        thenCombine();
 //        thenAcceptBoth();
 //        applyToEither();
 //        acceptEither();
@@ -28,15 +28,15 @@ public class CompletableFutureDemo {
     public static void runAsync() throws Exception {
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             try {
-                Integer.parseInt("abc");
+//                Integer.parseInt("abc");
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println("run end ...");
         });
-
         future.get();
+        System.out.println("===runAsync===");
     }
 
     //有返回值
@@ -49,7 +49,6 @@ public class CompletableFutureDemo {
             System.out.println("run end ...");
             return System.currentTimeMillis();
         });
-
         long time = future.get();
         System.out.println("time = "+time);
     }
@@ -58,20 +57,17 @@ public class CompletableFutureDemo {
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             try {
                 TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-            }
+            } catch (InterruptedException e) { }
             if(new Random().nextInt()%2>=0) {
-                int i = 12/0;
+//                int i = 12/0;
             }
             System.out.println("run end ...");
         });
-
         future.whenComplete(new BiConsumer<Void, Throwable>() {
             @Override
             public void accept(Void t, Throwable action) {
                 System.out.println("执行完成！");
             }
-
         });
         future.exceptionally(new Function<Throwable, Void>() {
             @Override
@@ -80,14 +76,13 @@ public class CompletableFutureDemo {
                 return null;
             }
         });
-
         TimeUnit.SECONDS.sleep(2);
     }
     private static void thenApply() throws Exception {
         CompletableFuture<Long> future = CompletableFuture.supplyAsync(new Supplier<Long>() {
             @Override
             public Long get() {
-                long result = new Random().nextInt(100);
+                long result = new Random().nextInt(10);
                 System.out.println("result1="+result);
                 return result;
             }
@@ -99,16 +94,16 @@ public class CompletableFutureDemo {
                 return result;
             }
         });
-
         long result = future.get();
         System.out.println(result);
+
     }
 
     public static void handle() throws Exception{
         CompletableFuture<Integer> future = CompletableFuture.supplyAsync(new Supplier<Integer>() {
             @Override
             public Integer get() {
-                int i= 10/0;
+//                int i= 10/0;
                 return new Random().nextInt(10);
             }
         }).handle(new BiFunction<Integer, Throwable, Integer>() {
@@ -116,7 +111,7 @@ public class CompletableFutureDemo {
             public Integer apply(Integer param, Throwable throwable) {
                 int result = -1;
                 if(throwable==null){
-                    result = param * 2;
+                    result = param * 10;
                 }else{
                     System.out.println(throwable.getMessage());
                 }

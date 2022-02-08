@@ -14,6 +14,7 @@ import net.sf.cglib.proxy.MethodProxy;
  */
 public class BookFacadeCglib implements MethodInterceptor {
 	private Object target;
+
 	/**
 	 * 创建代理对象
 	 */
@@ -24,14 +25,14 @@ public class BookFacadeCglib implements MethodInterceptor {
 		// 回调方法
 		enhancer.setCallback(this);
 		// 创建代理对象
-		String setProperty = System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\");
-		System.out.println(setProperty);
+		String setProperty = System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/home/tyx/");
+		System.out.println("===getInstance===29==="+setProperty);
 		return enhancer.create();
 	}
+
 //	@Override
 	// 回调方法
-	public Object intercept(Object obj, Method method, Object[] args,
-			MethodProxy proxy) throws Throwable {
+	public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
 		System.out.println("事物开始");
 		proxy.invokeSuper(obj, args);
 		System.out.println("事物结束");
