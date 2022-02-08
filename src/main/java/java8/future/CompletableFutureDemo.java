@@ -22,7 +22,7 @@ public class CompletableFutureDemo {
 //        acceptEither();
 //        runAfterEither();
 //        runAfterBoth();
-//        thenCompose();
+        thenCompose();
     }
 
     public static void runAsync() throws Exception {
