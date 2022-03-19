@@ -24,7 +24,7 @@ public class SortDemo {
 //			 System.out.println(arr[i]);
 //		}
 	}
-		
+
 
 	public static int[] init(int n) {
 		int arr[] = new int[n];
@@ -35,14 +35,14 @@ public class SortDemo {
 		return arr;
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n) æœ€å·®æƒ…å†µï¼šT(n) = O(n2) å¹³å‡æƒ…å†µï¼šT(n) = O(n2)
 	public static int[] bubbleSort(int[] arr) {
 		int len = arr.length;
 		for (int i = 0; i < len; i++) {
 			boolean flag = true;
 			for (int j = 0; j < len - 1 - i; j++) {
-				if (arr[j] > arr[j + 1]) { // ÏàÁÚÔªËØÁ½Á½¶Ô±È
-					int temp = arr[j + 1]; // ÔªËØ½»»»
+				if (arr[j] > arr[j + 1]) { // ç›¸é‚»å…ƒç´ ä¸¤ä¸¤å¯¹æ¯”
+					int temp = arr[j + 1]; // å…ƒç´ äº¤æ¢
 					arr[j + 1] = arr[j];
 					arr[j] = temp;
 					flag=false;
@@ -57,7 +57,7 @@ public class SortDemo {
 
 	public static void bubbleSort1(int[] arr) {
 		for (int i = 0; i < arr.length - 1; i++) {
-			boolean flag = true;// Éè¶¨Ò»¸ö±ê¼Ç£¬ÈôÎªtrue£¬Ôò±íÊ¾´Ë´ÎÑ­»·Ã»ÓĞ½øĞĞ½»»»£¬Ò²¾ÍÊÇ´ıÅÅĞòÁĞÒÑ¾­ÓĞĞò£¬ÅÅĞòÒÑÈ»Íê³É¡£
+			boolean flag = true;// è®¾å®šä¸€ä¸ªæ ‡è®°ï¼Œè‹¥ä¸ºtrueï¼Œåˆ™è¡¨ç¤ºæ­¤æ¬¡å¾ªç¯æ²¡æœ‰è¿›è¡Œäº¤æ¢ï¼Œä¹Ÿå°±æ˜¯å¾…æ’åºåˆ—å·²ç»æœ‰åºï¼Œæ’åºå·²ç„¶å®Œæˆã€‚
 			for (int j = 0; j < arr.length - 1 - i; j++) {
 				if (arr[j] > arr[j + 1]) {
 					// swap(arr,j,j+1);
@@ -70,15 +70,15 @@ public class SortDemo {
 		}
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n2) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n2) æœ€å·®æƒ…å†µï¼šT(n) = O(n2) å¹³å‡æƒ…å†µï¼šT(n) = O(n2)
 	public static int[] selectionSort(int[] arr) {
 		int len = arr.length;
 		int minIndex, temp;
 		for (int i = 0; i < len - 1; i++) {
 			minIndex = i;
 			for (int j = i + 1; j < len; j++) {
-				if (arr[j] < arr[minIndex]) { // Ñ°ÕÒ×îĞ¡µÄÊı
-					minIndex = j; // ½«×îĞ¡ÊıµÄË÷Òı±£´æ
+				if (arr[j] < arr[minIndex]) { // å¯»æ‰¾æœ€å°çš„æ•°
+					minIndex = j; // å°†æœ€å°æ•°çš„ç´¢å¼•ä¿å­˜
 				}
 			}
 			temp = arr[i];
@@ -88,7 +88,7 @@ public class SortDemo {
 		return arr;
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î»µÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n) æœ€åæƒ…å†µï¼šT(n) = O(n2) å¹³å‡æƒ…å†µï¼šT(n) = O(n2)
 	public static int[] insertionSort(int[] arr) {
 		int preIndex, current;
 		for (int i = 1; i < arr.length; i++) {
@@ -103,10 +103,10 @@ public class SortDemo {
 		return arr;
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlog2 n) ×î»µÇé¿ö£ºT(n) = O(nlog2 n) Æ½¾ùÇé¿ö£ºT(n) =O(nlog n)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(nlog2 n) æœ€åæƒ…å†µï¼šT(n) = O(nlog2 n) å¹³å‡æƒ…å†µï¼šT(n) =O(nlog n)
 	public static int[] shellSort(int[] arr) {
 		int len = arr.length, temp, gap = 1;
-		while (gap < len / 3) { // ¶¯Ì¬¶¨Òå¼ä¸ôĞòÁĞ
+		while (gap < len / 3) { // åŠ¨æ€å®šä¹‰é—´éš”åºåˆ—
 			gap = gap * 3 + 1;
 		}
 		for (; gap > 0; gap = (int) Math.floor(gap / 3)) {
@@ -122,24 +122,24 @@ public class SortDemo {
 		return arr;
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n) ×î²îÇé¿ö£ºT(n) = O(nlogn) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n) æœ€å·®æƒ…å†µï¼šT(n) = O(nlogn) å¹³å‡æƒ…å†µï¼šT(n) = O(nlogn)
 	public static int[] mergeSort(int[] a, int low, int high) {
 		int mid = (low + high) / 2;
 		if (low < high) {
 			mergeSort(a, low, mid);
 			mergeSort(a, mid + 1, high);
-			// ×óÓÒ¹é²¢
+			// å·¦å³å½’å¹¶
 			merge(a, low, mid, high);
 		}
 		return a;
 	}
-	
+
 	public static void merge(int[] a, int low, int mid, int high) {
 		int[] temp = new int[high - low + 1];
 		int i = low;
 		int j = mid + 1;
 		int k = 0;
-		// °Ñ½ÏĞ¡µÄÊıÏÈÒÆµ½ĞÂÊı×éÖĞ
+		// æŠŠè¾ƒå°çš„æ•°å…ˆç§»åˆ°æ–°æ•°ç»„ä¸­
 		while (i <= mid && j <= high) {
 			if (a[i] < a[j]) {
 				temp[k++] = a[i++];
@@ -147,21 +147,21 @@ public class SortDemo {
 				temp[k++] = a[j++];
 			}
 		}
-		// °Ñ×ó±ßÊ£ÓàµÄÊıÒÆÈëÊı×é
+		// æŠŠå·¦è¾¹å‰©ä½™çš„æ•°ç§»å…¥æ•°ç»„
 		while (i <= mid) {
 			temp[k++] = a[i++];
 		}
-		// °ÑÓÒ±ß±ßÊ£ÓàµÄÊıÒÆÈëÊı×é
+		// æŠŠå³è¾¹è¾¹å‰©ä½™çš„æ•°ç§»å…¥æ•°ç»„
 		while (j <= high) {
 			temp[k++] = a[j++];
 		}
-		// °ÑĞÂÊı×éÖĞµÄÊı¸²¸ÇnumsÊı×é
+		// æŠŠæ–°æ•°ç»„ä¸­çš„æ•°è¦†ç›–numsæ•°ç»„
 		for (int x = 0; x < temp.length; x++) {
 			a[x + low] = temp[x];
 		}
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlogn) ×î²îÇé¿ö£ºT(n) = O(n2) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)¡¡
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(nlogn) æœ€å·®æƒ…å†µï¼šT(n) = O(n2) å¹³å‡æƒ…å†µï¼šT(n) = O(nlogn)ã€€
 	public static void quickSort(int[] array, int lo, int hi) {
 		if (lo >= hi) {
 			return;
@@ -172,14 +172,14 @@ public class SortDemo {
 	}
 
 	public static int partition(int[] array, int low, int high) {
-		// ¹Ì¶¨µÄÇĞ·Ö·½Ê½
+		// å›ºå®šçš„åˆ‡åˆ†æ–¹å¼
 		int key = array[low];
 		while (low < high) {
-			while (array[high] >= key && high > low) {// ´Óºó°ë²¿·ÖÏòÇ°É¨Ãè
+			while (array[high] >= key && high > low) {// ä»ååŠéƒ¨åˆ†å‘å‰æ‰«æ
 				high--;
 			}
 			array[low] = array[high];
-			while (array[low] <= key && high > low) {// ´ÓÇ°°ë²¿·ÖÏòºóÉ¨Ãè
+			while (array[low] <= key && high > low) {// ä»å‰åŠéƒ¨åˆ†å‘åæ‰«æ
 				low++;
 			}
 			array[high] = array[low];
@@ -188,17 +188,17 @@ public class SortDemo {
 		return high;
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(nlogn) ×î²îÇé¿ö£ºT(n) = O(nlogn) Æ½¾ùÇé¿ö£ºT(n) = O(nlogn)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(nlogn) æœ€å·®æƒ…å†µï¼šT(n) = O(nlogn) å¹³å‡æƒ…å†µï¼šT(n) = O(nlogn)
 	public static int[] heapSort(int[] a) {
 		int i;
-		for (i = a.length / 2 - 1; i >= 0; i--) {// ¹¹½¨Ò»¸ö´ó¶¥¶Ñ
+		for (i = a.length / 2 - 1; i >= 0; i--) {// æ„å»ºä¸€ä¸ªå¤§é¡¶å †
 			adjustHeap(a, i, a.length - 1);
 		}
-		for (i = a.length - 1; i >= 0; i--) {// ½«¶Ñ¶¥¼ÇÂ¼ºÍµ±Ç°Î´¾­ÅÅĞò×ÓĞòÁĞµÄ×îºóÒ»¸ö¼ÇÂ¼½»»»
+		for (i = a.length - 1; i >= 0; i--) {// å°†å †é¡¶è®°å½•å’Œå½“å‰æœªç»æ’åºå­åºåˆ—çš„æœ€åä¸€ä¸ªè®°å½•äº¤æ¢
 			int temp = a[0];
 			a[0] = a[i];
 			a[i] = temp;
-			adjustHeap(a, 0, i - 1);// ½«aÖĞÇ°i-1¸ö¼ÇÂ¼ÖØĞÂµ÷ÕûÎª´ó¶¥¶Ñ
+			adjustHeap(a, 0, i - 1);// å°†aä¸­å‰i-1ä¸ªè®°å½•é‡æ–°è°ƒæ•´ä¸ºå¤§é¡¶å †
 		}
 		return a;
 	}
@@ -206,9 +206,9 @@ public class SortDemo {
 	public static void adjustHeap(int[] a, int i, int len) {
 		int temp, j;
 		temp = a[i];
-		for (j = 2 * i; j < len; j *= 2) {// ÑØ¹Ø¼ü×Ö½Ï´óµÄº¢×Ó½áµãÏòÏÂÉ¸Ñ¡
+		for (j = 2 * i; j < len; j *= 2) {// æ²¿å…³é”®å­—è¾ƒå¤§çš„å­©å­ç»“ç‚¹å‘ä¸‹ç­›é€‰
 			if (j < len && a[j] < a[j + 1])
-				++j; // jÎª¹Ø¼ü×ÖÖĞ½Ï´ó¼ÇÂ¼µÄÏÂ±ê
+				++j; // jä¸ºå…³é”®å­—ä¸­è¾ƒå¤§è®°å½•çš„ä¸‹æ ‡
 			if (temp >= a[j])
 				break;
 			a[i] = a[j];
@@ -217,30 +217,30 @@ public class SortDemo {
 		a[i] = temp;
 	}
 
-//	¼ÆÊıÅÅĞòÊÊÓÃÓÚĞ¡·¶Î§Êı
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n+k) ×î²îÇé¿ö£ºT(n) = O(n+k) Æ½¾ùÇé¿ö£ºT(n) = O(n+k)
+	//	è®¡æ•°æ’åºé€‚ç”¨äºå°èŒƒå›´æ•°
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n+k) æœ€å·®æƒ…å†µï¼šT(n) = O(n+k) å¹³å‡æƒ…å†µï¼šT(n) = O(n+k)
 	private static int[] countSort(int[] array, int k) {
-		int[] C = new int[k + 1];// ¹¹ÔìCÊı×é
-		int length = array.length, sum = 0;// »ñÈ¡AÊı×é´óĞ¡ÓÃÓÚ¹¹ÔìBÊı×é
-		int[] B = new int[length];// ¹¹ÔìBÊı×é
+		int[] C = new int[k + 1];// æ„é€ Cæ•°ç»„
+		int length = array.length, sum = 0;// è·å–Aæ•°ç»„å¤§å°ç”¨äºæ„é€ Bæ•°ç»„
+		int[] B = new int[length];// æ„é€ Bæ•°ç»„
 		for (int i = 0; i < length; i++) {
-			C[array[i]] += 1;// Í³¼ÆAÖĞ¸÷ÔªËØ¸öÊı£¬´æÈëCÊı×é
+			C[array[i]] += 1;// ç»Ÿè®¡Aä¸­å„å…ƒç´ ä¸ªæ•°ï¼Œå­˜å…¥Cæ•°ç»„
 		}
-		for (int i = 0; i < k + 1; i++)// ĞŞ¸ÄCÊı×é
+		for (int i = 0; i < k + 1; i++)// ä¿®æ”¹Cæ•°ç»„
 		{
 			sum += C[i];
 			C[i] = sum;
 		}
-		for (int i = length - 1; i >= 0; i--)// ±éÀúAÊı×é£¬¹¹ÔìBÊı×é
+		for (int i = length - 1; i >= 0; i--)// éå†Aæ•°ç»„ï¼Œæ„é€ Bæ•°ç»„
 		{
-			B[C[array[i]] - 1] = array[i];// ½«AÖĞ¸ÃÔªËØ·Åµ½ÅÅĞòºóÊı×éBÖĞÖ¸¶¨µÄÎ»ÖÃ
-			C[array[i]]--;// ½«CÖĞ¸ÃÔªËØ-1£¬·½±ã´æ·ÅÏÂÒ»¸öÍ¬Ñù´óĞ¡µÄÔªËØ
+			B[C[array[i]] - 1] = array[i];// å°†Aä¸­è¯¥å…ƒç´ æ”¾åˆ°æ’åºåæ•°ç»„Bä¸­æŒ‡å®šçš„ä½ç½®
+			C[array[i]]--;// å°†Cä¸­è¯¥å…ƒç´ -1ï¼Œæ–¹ä¾¿å­˜æ”¾ä¸‹ä¸€ä¸ªåŒæ ·å¤§å°çš„å…ƒç´ 
 
 		}
-		return B;// ½«ÅÅĞòºÃµÄÊı×é·µ»Ø£¬Íê³ÉÅÅĞò
+		return B;// å°†æ’åºå¥½çš„æ•°ç»„è¿”å›ï¼Œå®Œæˆæ’åº
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n+k) ×î²îÇé¿ö£ºT(n) = O(n+k) Æ½¾ùÇé¿ö£ºT(n) = O(n2)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n+k) æœ€å·®æƒ…å†µï¼šT(n) = O(n+k) å¹³å‡æƒ…å†µï¼šT(n) = O(n2)
 	public static void bucketSort(int[] arr) {
 		int max = Integer.MIN_VALUE;
 		int min = Integer.MAX_VALUE;
@@ -248,52 +248,52 @@ public class SortDemo {
 			max = Math.max(max, arr[i]);
 			min = Math.min(min, arr[i]);
 		}
-		// Í°Êı
+		// æ¡¶æ•°
 		int bucketNum = (max - min) / arr.length + 1;
 		ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketNum);
 		for (int i = 0; i < bucketNum; i++) {
 			bucketArr.add(new ArrayList<Integer>());
 		}
 
-		// ½«Ã¿¸öÔªËØ·ÅÈëÍ°
+		// å°†æ¯ä¸ªå…ƒç´ æ”¾å…¥æ¡¶
 		for (int i = 0; i < arr.length; i++) {
 			int num = (arr[i] - min) / (arr.length);
 			bucketArr.get(num).add(arr[i]);
 		}
 
-		// ¶ÔÃ¿¸öÍ°½øĞĞÅÅĞò
+		// å¯¹æ¯ä¸ªæ¡¶è¿›è¡Œæ’åº
 		for (int i = 0; i < bucketArr.size(); i++) {
 			Collections.sort(bucketArr.get(i));
 		}
 	}
 
-	// ×î¼ÑÇé¿ö£ºT(n) = O(n * k) ×î²îÇé¿ö£ºT(n) = O(n * k) Æ½¾ùÇé¿ö£ºT(n) = O(n * k)
+	// æœ€ä½³æƒ…å†µï¼šT(n) = O(n * k) æœ€å·®æƒ…å†µï¼šT(n) = O(n * k) å¹³å‡æƒ…å†µï¼šT(n) = O(n * k)
 	private static void radixSort(int[] array, int d) {
-		int n = 1;// ´ú±íÎ»Êı¶ÔÓ¦µÄÊı£º1,10,100...
-		int k = 0;// ±£´æÃ¿Ò»Î»ÅÅĞòºóµÄ½á¹ûÓÃÓÚÏÂÒ»Î»µÄÅÅĞòÊäÈë
+		int n = 1;// ä»£è¡¨ä½æ•°å¯¹åº”çš„æ•°ï¼š1,10,100...
+		int k = 0;// ä¿å­˜æ¯ä¸€ä½æ’åºåçš„ç»“æœç”¨äºä¸‹ä¸€ä½çš„æ’åºè¾“å…¥
 		int length = array.length;
-		int[][] bucket = new int[10][length];// ÅÅĞòÍ°ÓÃÓÚ±£´æÃ¿´ÎÅÅĞòºóµÄ½á¹û£¬ÕâÒ»Î»ÉÏÅÅĞò½á¹ûÏàÍ¬µÄÊı×Ö·ÅÔÚÍ¬Ò»¸öÍ°Àï
-		int[] order = new int[length];// ÓÃÓÚ±£´æÃ¿¸öÍ°ÀïÓĞ¶àÉÙ¸öÊı×Ö
+		int[][] bucket = new int[10][length];// æ’åºæ¡¶ç”¨äºä¿å­˜æ¯æ¬¡æ’åºåçš„ç»“æœï¼Œè¿™ä¸€ä½ä¸Šæ’åºç»“æœç›¸åŒçš„æ•°å­—æ”¾åœ¨åŒä¸€ä¸ªæ¡¶é‡Œ
+		int[] order = new int[length];// ç”¨äºä¿å­˜æ¯ä¸ªæ¡¶é‡Œæœ‰å¤šå°‘ä¸ªæ•°å­—
 		while (n < d) {
-			for (int num : array) // ½«Êı×éarrayÀïµÄÃ¿¸öÊı×Ö·ÅÔÚÏàÓ¦µÄÍ°Àï
+			for (int num : array) // å°†æ•°ç»„arrayé‡Œçš„æ¯ä¸ªæ•°å­—æ”¾åœ¨ç›¸åº”çš„æ¡¶é‡Œ
 			{
 				int digit = (num / n) % 10;
 				bucket[digit][order[digit]] = num;
 				order[digit]++;
 			}
-			for (int i = 0; i < length; i++)// ½«Ç°Ò»¸öÑ­»·Éú³ÉµÄÍ°ÀïµÄÊı¾İ¸²¸Çµ½Ô­Êı×éÖĞÓÃÓÚ±£´æÕâÒ»Î»µÄÅÅĞò½á¹û
+			for (int i = 0; i < length; i++)// å°†å‰ä¸€ä¸ªå¾ªç¯ç”Ÿæˆçš„æ¡¶é‡Œçš„æ•°æ®è¦†ç›–åˆ°åŸæ•°ç»„ä¸­ç”¨äºä¿å­˜è¿™ä¸€ä½çš„æ’åºç»“æœ
 			{
-				if (order[i] != 0)// Õâ¸öÍ°ÀïÓĞÊı¾İ£¬´ÓÉÏµ½ÏÂ±éÀúÕâ¸öÍ°²¢½«Êı¾İ±£´æµ½Ô­Êı×éÖĞ
+				if (order[i] != 0)// è¿™ä¸ªæ¡¶é‡Œæœ‰æ•°æ®ï¼Œä»ä¸Šåˆ°ä¸‹éå†è¿™ä¸ªæ¡¶å¹¶å°†æ•°æ®ä¿å­˜åˆ°åŸæ•°ç»„ä¸­
 				{
 					for (int j = 0; j < order[i]; j++) {
 						array[k] = bucket[i][j];
 						k++;
 					}
 				}
-				order[i] = 0;// ½«Í°Àï¼ÆÊıÆ÷ÖÃ0£¬ÓÃÓÚÏÂÒ»´ÎÎ»ÅÅĞò
+				order[i] = 0;// å°†æ¡¶é‡Œè®¡æ•°å™¨ç½®0ï¼Œç”¨äºä¸‹ä¸€æ¬¡ä½æ’åº
 			}
 			n *= 10;
-			k = 0;// ½«kÖÃ0£¬ÓÃÓÚÏÂÒ»ÂÖ±£´æÎ»ÅÅĞò½á¹û
+			k = 0;// å°†kç½®0ï¼Œç”¨äºä¸‹ä¸€è½®ä¿å­˜ä½æ’åºç»“æœ
 		}
 	}
 }
