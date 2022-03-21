@@ -1,4 +1,4 @@
-package other;
+package dataStructure;
 
 public class BTree<Key extends Comparable<Key>, Value> {
     //    https://www.cnblogs.com/jing99/p/11741685.html

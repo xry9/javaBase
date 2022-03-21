@@ -1,4 +1,4 @@
-package other;
+package dataStructure;
 
 /**
   * Java 语言: 二叉查找树
@@ -67,9 +67,6 @@ package other;
          tree.clear();
      }
  }
-
-
-
 
 
 class RBTree<T extends Comparable<T>> {

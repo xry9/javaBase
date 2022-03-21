@@ -1,4 +1,4 @@
-package other;
+package dataStructure;
 
 import java.io.IOException;
 import java.util.*;
